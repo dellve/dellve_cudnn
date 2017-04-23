@@ -3,7 +3,7 @@ __all__ = [
     'BackwardActivationStressTool',
     'BackwardConvolutionDataBenchmark',
     'BackwardConvolutionDataStressTool',
-    'BackwardConvolutionFilterBenchmark'
+    'BackwardConvolutionFilterBenchmark',
     'BackwardPoolingBenchmark',
     'BackwardPoolingStressTool',
     'BackwardSoftmaxBenchmark',
