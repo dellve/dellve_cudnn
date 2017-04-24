@@ -7,9 +7,8 @@
 #include <memory>
 
 #include <curand.h>
-#include "CuDNN/Tensor.hpp"
-#include "CuRAND/Generator.hpp"
-#include "CuRAND/Status.hpp"
+#include "CuDNN/CuDNN.hpp"
+#include "CuRAND/CuRAND.hpp"
 
 void print_buffer(double *buf, int size) {
     for (int i = 0; i < size; i++) {
@@ -39,7 +38,7 @@ int main(int argc, char *argv[]) {
     printf("---------------------------------\n");
     print_tensor(input, size);
 
-    CuRAND::Generator gen;
+    CuRAND::PseudoGenerator gen = CuRAND::PseudoGenerator::create(CURAND_RNG_PSEUDO_XORWOW, 42ULL);
     auto runs = 3;
     for(int i = 0; i < runs; i++) {
         gen.generateUniform(input, size);
