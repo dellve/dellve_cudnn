@@ -6,11 +6,10 @@ import setuptools
 import os
 import os.path
 
-# TODO: un-hardcode this!
-cuda_path       = '/usr/local/cuda'
+cuda_path       = os.environ['CUDA_PATH']
 cuda_include    = os.path.join(cuda_path, "include")
 cuda_lib64      = os.path.join(cuda_path, "lib64")
-cudnn_path      = '/usr/local/cudnn'
+cudnn_path      = os.environ['CUDNN_PATH']
 cudnn_include   = os.path.join(cudnn_path, "include")
 cudnn_lib64     = os.path.join(cudnn_path, "lib64")
 
