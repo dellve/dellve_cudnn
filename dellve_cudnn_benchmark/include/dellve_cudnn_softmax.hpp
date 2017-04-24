@@ -10,12 +10,13 @@
 
 #include "dellve_cudnn_benchmark.hpp"
 #include "dellve_constants.hpp"
+#include "dellve_tensor_curand_helper.hpp"
 #include "CuDNN/Handle.hpp"
 #include "CuDNN/Status.hpp"
 #include "CuDNN/Tensor.hpp"
 #include "CuDNN/SoftmaxAlgorithm.hpp"
 
-namespace CuDNN {
+namespace DELLve {
     namespace Softmax {
         CuDNN::SoftmaxAlgorithm convAlgorithm(std::string alg) {
             // std::cout << "Setting Softmax Algorithm to " << alg << std::endl;
@@ -47,6 +48,7 @@ namespace CuDNN {
             auto algorithm = convAlgorithm(alg);
             auto x = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
             auto y = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
+            DELLve::CurandTensor<T>::fillTensorsRand({x});
 
             return [=]() {
                 return cudnnSoftmaxForward(handle,
@@ -77,6 +79,7 @@ namespace CuDNN {
             auto dX = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
             auto y = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
             auto dY = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
+            DELLve::CurandTensor<T>::fillTensorsRand({y,dY});
 
             return [=]() {
                 return cudnnSoftmaxBackward(handle,

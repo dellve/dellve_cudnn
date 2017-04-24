@@ -2,6 +2,7 @@
 #define DELLVE_CUDNN_CONVOLUTION_H_
 
 #include "dellve_cudnn_benchmark.hpp"
+#include "dellve_tensor_curand_helper.hpp"
 
 #include "CuDNN/Convolution.hpp"
 #include "CuDNN/Handle.hpp"
@@ -13,7 +14,7 @@
 
 #include <iostream>
 
-namespace CuDNN {
+namespace DELLve {
     namespace Convolution {
 		
 		template <typename T>
@@ -31,6 +32,7 @@ namespace CuDNN {
 		     * Create convolution filter
 		     */
 			auto filter = CuDNN::Filter<T>::createNCHW(k, c, r, s);
+            DELLve::CurandTensor<T>::fillTensorsRand({input});
 
 			/**
 			 * Create convolution descriptor
@@ -58,7 +60,7 @@ namespace CuDNN {
 		   	 */
 		   	auto output = CuDNN::Tensor<T>::createNCHW(outputDims);
 
-		   	ConvolutionFwdAlgo algorithm;
+            CuDNN::ConvolutionFwdAlgo algorithm;
 		   	CuDNN::checkStatus (
 		   		cudnnGetConvolutionForwardAlgorithm ( 
 		   			handle,
@@ -147,8 +149,9 @@ namespace CuDNN {
 		   	 * Create output tensor
 		   	 */
 		   	auto output = CuDNN::Tensor<T>::createNCHW(outputDims);
+            DELLve::CurandTensor<T>::fillTensorsRand({output});
 
-		   	ConvolutionBwdDataAlgo algorithm;
+            CuDNN::ConvolutionBwdDataAlgo algorithm;
 		   	CuDNN::checkStatus (
 		   		cudnnGetConvolutionBackwardDataAlgorithm (
 		   			handle,
@@ -237,8 +240,9 @@ namespace CuDNN {
 		   	 * Create output tensor
 		   	 */
 		   	auto output = CuDNN::Tensor<T>::createNCHW(outputDims);
+            DELLve::CurandTensor<T>::fillTensorsRand({input, output});
 
-		   	ConvolutionBwdFilterAlgo algorithm;
+            CuDNN::ConvolutionBwdFilterAlgo algorithm;
 		   	CuDNN::checkStatus (
 		   		cudnnGetConvolutionBackwardFilterAlgorithm(
 		   			handle,

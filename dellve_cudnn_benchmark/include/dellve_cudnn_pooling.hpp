@@ -10,13 +10,14 @@
 
 #include "dellve_cudnn_benchmark.hpp"
 #include "dellve_constants.hpp"
+#include "dellve_tensor_curand_helper.hpp"
 #include "CuDNN/Handle.hpp"
 #include "CuDNN/Status.hpp"
 #include "CuDNN/Tensor.hpp"
 #include "CuDNN/PoolingMode.hpp"
 #include "CuDNN/PoolingDescriptor.hpp"
 
-namespace CuDNN {
+namespace DELLve {
     namespace Pooling {
         CuDNN::PoolingMode convertMode(std::string mode) {
             // std::cout << "Setting Pooling Mode to " << mode << std::endl;
@@ -48,6 +49,7 @@ namespace CuDNN {
                                                                                    hStride, wStride,
                                                                                    poolingMode);
             auto x = CuDNN::Tensor<T>::createNCHW(n,c,h,w);
+            DELLve::CurandTensor<T>::fillTensorsRand({x});
 		   	std::tuple<int,int,int,int> outputDims; // NCHW tuple of output dimensions
             CuDNN::checkStatus(
                 cudnnGetPooling2dForwardOutputDim(
@@ -103,6 +105,7 @@ namespace CuDNN {
             );
             auto y = CuDNN::Tensor<T>::createNCHW(outputDims);
             auto dY = CuDNN::Tensor<T>::createNCHW(outputDims);
+            DELLve::CurandTensor<T>::fillTensorsRand({y, dY});
 
             return [=]() {
                 return cudnnPoolingBackward(

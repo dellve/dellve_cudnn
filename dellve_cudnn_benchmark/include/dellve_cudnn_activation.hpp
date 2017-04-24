@@ -10,12 +10,13 @@
 
 #include "dellve_cudnn_benchmark.hpp"
 #include "dellve_constants.hpp"
+#include "dellve_tensor_curand_helper.hpp"
 #include "CuDNN/ActivationDescriptor.hpp"
 #include "CuDNN/Handle.hpp"
 #include "CuDNN/Status.hpp"
 #include "CuDNN/Tensor.hpp"
 
-namespace CuDNN {
+namespace DELLve {
     namespace Activation {
         CuDNN::ActivationDescriptor createDescriptor(void) {
             CuDNN::ActivationDescriptor descriptor;
@@ -37,6 +38,7 @@ namespace CuDNN {
             auto descriptor = createDescriptor();
             auto x = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
             auto y = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
+            DELLve::CurandTensor<T>::fillTensorsRand({x});
 
             return [=]() {
                 return cudnnActivationForward (
@@ -61,6 +63,7 @@ namespace CuDNN {
             auto y = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
             auto dx = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
             auto dy = CuDNN::Tensor<T>::createNCHW(n, c, h, w);
+            DELLve::CurandTensor<T>::fillTensorsRand({y,dy});
 
             return [=]() {
                 return cudnnActivationBackward (
