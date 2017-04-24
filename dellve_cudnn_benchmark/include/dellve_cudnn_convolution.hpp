@@ -32,7 +32,7 @@ namespace DELLve {
 		     * Create convolution filter
 		     */
 			auto filter = CuDNN::Filter<T>::createNCHW(k, c, r, s);
-            DELLve::CurandTensor<T>::fillTensorsRand({input});
+            DELLve::CurandTensor<T>::fillTensorsRand(input, filter);
 
 			/**
 			 * Create convolution descriptor
@@ -149,7 +149,7 @@ namespace DELLve {
 		   	 * Create output tensor
 		   	 */
 		   	auto output = CuDNN::Tensor<T>::createNCHW(outputDims);
-            DELLve::CurandTensor<T>::fillTensorsRand({output});
+            DELLve::CurandTensor<T>::fillTensorsRand(output, filter);
 
             CuDNN::ConvolutionBwdDataAlgo algorithm;
 		   	CuDNN::checkStatus (
