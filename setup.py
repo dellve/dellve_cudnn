@@ -41,7 +41,8 @@ ext_modules = [
             libraries = [
                 'cuda',
                 'cudart',
-                'cudnn'
+                'cudnn',
+                'curand'
                 ],
             library_dirs=[
                 cuda_lib64,
