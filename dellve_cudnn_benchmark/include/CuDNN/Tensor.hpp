@@ -58,6 +58,15 @@ namespace CuDNN {
 			return mDescriptor;
 		}
 
+        int getSize() const {
+            int i;
+            int sum = 0;
+            for(i = 0; i < mDims.size(); i++) {
+                sum += mDims[i];
+            }
+
+            return sum;
+        }
 
 	 	static Tensor<T>
 	 	createNCHW ( int n, int c, int h, int w, T fillValue = 0 ) {
