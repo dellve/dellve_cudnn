@@ -4,6 +4,7 @@
 #include <cudnn.h>
 #include <cstdint>
 
+#include "DataType.hpp"
 #include "Status.hpp"
 #include "RAII.hpp"
 #include "TensorFormat.hpp"

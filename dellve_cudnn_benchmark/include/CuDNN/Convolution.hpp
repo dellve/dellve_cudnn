@@ -9,6 +9,7 @@
 #include "ConvolutionBwdDataAlgo.hpp"
 #include "ConvolutionBwdFilterAlgo.hpp"
 #include "FilterDescriptor.hpp"
+#include "Handle.hpp"
 #include "Status.hpp"
 #include "TensorDescriptor.hpp"
 
