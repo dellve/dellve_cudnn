@@ -11,9 +11,10 @@ class StressToolFactory(Benchmark):
     def get_controller(self): pass
 
     def routine(self):
+        self.memutil = 0.5
         try:
             self.controller = self.get_controller()
-            self.controller.start(1,100)
+            self.controller.start_stress_tool(1, 10)
 
             while (not self.complete()):
                 self.update_progress()
@@ -23,8 +24,7 @@ class StressToolFactory(Benchmark):
             # TODO: output performance details
 
         except BenchmarkInterrupt:
-            print '\nStopping current stress tool'
-            self.controller.stop()
+            print '\nCurrent stress tool has stopped'
 
     def complete(self):
         return self.controller.get_progress() == 1.0

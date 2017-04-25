@@ -13,13 +13,10 @@ PYBIND11_PLUGIN(dellve_cudnn_benchmark) {
 	py::module m("dellve_cudnn_benchmark");
 
 	py::class_<DELLve::BenchmarkController>(m, "BenchmarkController")
-        .def("start", &DELLve::BenchmarkController::start)
-        .def("stop", &DELLve::BenchmarkController::stop)
-        .def("get_curr_run", &DELLve::BenchmarkController::getCurrRun)
+        .def("start_benchmark", &DELLve::BenchmarkController::startBenchmark)
+        .def("start_stress_tool", &DELLve::BenchmarkController::startStressTool)
         .def("get_progress", &DELLve::BenchmarkController::getProgress)
-        .def("get_curr_time_micro", &DELLve::BenchmarkController::getCurrTimeMicro)
         .def("get_avg_time_micro", &DELLve::BenchmarkController::getAvgTimeMicro);
-
 
 	DELLve::registerBenchmark(m, "activation_forward", &DELLve::Activation::forward<float>);
 	DELLve::registerBenchmark(m, "activation_backward", &DELLve::Activation::backward<float>);

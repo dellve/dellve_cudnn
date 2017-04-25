@@ -45,58 +45,84 @@ namespace DELLve {
     }
     
     typedef std::function<CuDNN::Status(void)> Benchmark;
+    typedef std::chrono::duration<long int, std::micro> usec;
+    typedef std::chrono::seconds sec;
+    typedef std::chrono::high_resolution_clock clock;
 
     class BenchmarkController {
        
-        int numRuns_;
+        volatile float progress_;
 
-        volatile bool stop_;
-        volatile int currRun_;
-        volatile int currTimeMicro_;
-        
+        // Benchmark variables
+        int currRun_;
+        usec totalTimeMicro_;
+
     public:
         
-        void start ( int deviceId, int numRuns ) {
-            numRuns_ = numRuns;
-            stop_ = false;
+        void startBenchmark(int deviceId, int numRuns) {
+            progress_ = 0.0f;
             currRun_ = -1;
-            currTimeMicro_ = 0;
+            totalTimeMicro_ = usec(0);
 
             std::thread([=](){
                 cudaSetDevice(deviceId);
-                cudaDeviceSynchronize();
                 Benchmark benchmark = getBenchmark();
 
-                for (currRun_ = 0; currRun_ < numRuns && !stop_; currRun_++) {
-                    auto start = std::chrono::steady_clock::now();
+                // warm up
+                CuDNN::checkStatus(benchmark());
+                cudaDeviceSynchronize();
 
+                for (currRun_ = 0; currRun_ < numRuns; currRun_++) {
+                    auto start = clock::now();
                     CuDNN::checkStatus(benchmark());
                     cudaDeviceSynchronize();
+                    auto end = clock::now();
 
-                    auto end = std::chrono::steady_clock::now();
-                    currTimeMicro_ += static_cast<int>(std::chrono::duration<double, std::micro>(end-start).count());
+                    totalTimeMicro_ += std::chrono::duration_cast<usec>(end - start);
+                    progress_ = ((float)(currRun_)) / numRuns;
                 }
+
+                cudaDeviceSynchronize();
             }).detach();
         }
 
-        void stop() {
-            stop_ = true;
-        }
+        void startStressTool(int deviceId, int seconds) {
+            progress_ = 0.0f;
 
-        int getCurrRun() const {
-            return currRun_;
+            std::thread([=](){
+                cudaSetDevice(deviceId);
+                Benchmark benchmark = getBenchmark();
+                CuDNN::checkStatus(benchmark());
+                cudaDeviceSynchronize();
+                
+                auto startTime = clock::now();
+                auto endTime = clock::time_point(startTime.time_since_epoch() + sec(seconds));
+                for (;;) {
+                    CuDNN::checkStatus(benchmark());
+                    cudaDeviceSynchronize();
+
+                    auto currentTime = clock::now();
+                    int elapsedTime = std::chrono::duration_cast<sec>(currentTime - startTime).count();
+                    progress_ =  ((float) (elapsedTime)) / seconds;
+                    progress_ = progress_ > 1.00f ? 1.00f : progress_; 
+
+                    if (elapsedTime >= seconds) {
+                        progress_ = 1.00f;
+                        break;
+                    }
+                } 
+
+                cudaDeviceSynchronize();
+            }).detach();
         }
 
         float getProgress() const {
-            return (float) (currRun_)/numRuns_;
-        }
-
-        int getCurrTimeMicro() const {
-            return currTimeMicro_;
+            return progress_;
         }
 
         int getAvgTimeMicro() const {
-            return currTimeMicro_/currRun_;
+            int totalTimeMicro = static_cast<int>(totalTimeMicro_.count());
+            return totalTimeMicro / currRun_;
         }
         
     private:

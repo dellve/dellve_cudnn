@@ -26,7 +26,7 @@ class BenchmarkFactory(Benchmark):
             self.controller = control_constructor(*problem)
 
             try:
-                self.controller.start(1, 50)
+                self.controller.start_benchmark(1, 50)
 
                 while (not self.complete()):
                     self.update_progress(problem_number, problem_set_size)
@@ -36,8 +36,7 @@ class BenchmarkFactory(Benchmark):
                 results.append(self.controller.get_avg_time_micro())
 
             except BenchmarkInterrupt:
-                print '\nStopping current benchmark'
-                self.controller.stop()
+                print '\nCurrent benchmark has stopped'
                 break
 
         self.generate_report(problem_set, results)
