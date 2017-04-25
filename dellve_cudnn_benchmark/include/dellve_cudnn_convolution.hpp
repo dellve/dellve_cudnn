@@ -43,7 +43,7 @@ namespace DELLve {
 			 * Calculate convolution output dimensions
 			 */
 		   	std::tuple<int,int,int,int> outputDims; // NCHW tuple of output dimensions
-		   	CuDNN::checkStatus (
+		   	CUDNN_CHECK_STATUS (
 		   		cudnnGetConvolution2dForwardOutputDim (
 		   			convDescriptor,
 		   			input.getDescriptor(),
@@ -61,7 +61,7 @@ namespace DELLve {
 		   	auto output = CuDNN::Tensor<T>::createNCHW(outputDims);
 
             CuDNN::ConvolutionFwdAlgo algorithm;
-		   	CuDNN::checkStatus (
+		   	CUDNN_CHECK_STATUS (
 		   		cudnnGetConvolutionForwardAlgorithm ( 
 		   			handle,
 					input.getDescriptor(),
@@ -133,7 +133,7 @@ namespace DELLve {
 			 * Calculate convolution output dimensions
 			 */
 		   	std::tuple<int,int,int,int> outputDims; // NCHW tuple of output dimensions
-		   	CuDNN::checkStatus (
+		   	CUDNN_CHECK_STATUS (
 		   		cudnnGetConvolution2dForwardOutputDim (
 		   			convDescriptor,
 		   			input.getDescriptor(),
@@ -152,7 +152,7 @@ namespace DELLve {
             DELLve::CurandTensor<T>::fillTensorsRand(output, filter);
 
             CuDNN::ConvolutionBwdDataAlgo algorithm;
-		   	CuDNN::checkStatus (
+		   	CUDNN_CHECK_STATUS (
 		   		cudnnGetConvolutionBackwardDataAlgorithm (
 		   			handle,
 					filter.getDescriptor(),
@@ -224,7 +224,7 @@ namespace DELLve {
 			 * Calculate convolution output dimensions
 			 */
 		   	std::tuple<int,int,int,int> outputDims; // NCHW tuple of output dimensions
-		   	CuDNN::checkStatus (
+		   	CUDNN_CHECK_STATUS (
 		   		cudnnGetConvolution2dForwardOutputDim (
 		   			convDescriptor,
 		   			input.getDescriptor(),
@@ -243,7 +243,7 @@ namespace DELLve {
             DELLve::CurandTensor<T>::fillTensorsRand({input, output});
 
             CuDNN::ConvolutionBwdFilterAlgo algorithm;
-		   	CuDNN::checkStatus (
+		   	CUDNN_CHECK_STATUS (
 		   		cudnnGetConvolutionBackwardFilterAlgorithm(
 		   			handle,
 		   			input.getDescriptor(),

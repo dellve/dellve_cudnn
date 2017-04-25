@@ -51,7 +51,7 @@ namespace DELLve {
             auto x = CuDNN::Tensor<T>::createNCHW(n,c,h,w);
             DELLve::CurandTensor<T>::fillTensorsRand({x});
 		   	std::tuple<int,int,int,int> outputDims; // NCHW tuple of output dimensions
-            CuDNN::checkStatus(
+            CUDNN_CHECK_STATUS(
                 cudnnGetPooling2dForwardOutputDim(
                     descriptor,
                     x.getDescriptor(),
@@ -93,7 +93,7 @@ namespace DELLve {
             auto x = CuDNN::Tensor<T>::createNCHW(n,c,h,w);
             auto dX = CuDNN::Tensor<T>::createNCHW(n,c,h,w);
 		   	std::tuple<int,int,int,int> outputDims; // NCHW tuple of output dimensions
-            CuDNN::checkStatus(
+            CUDNN_CHECK_STATUS(
                 cudnnGetPooling2dForwardOutputDim(
                     descriptor,
                     x.getDescriptor(),

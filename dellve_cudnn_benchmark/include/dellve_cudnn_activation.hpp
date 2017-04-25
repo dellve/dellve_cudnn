@@ -20,7 +20,7 @@ namespace DELLve {
     namespace Activation {
         CuDNN::ActivationDescriptor createDescriptor(void) {
             CuDNN::ActivationDescriptor descriptor;
-            CuDNN::checkStatus (
+            CUDNN_CHECK_STATUS (
                 cudnnSetActivationDescriptor ( 
                     descriptor,
                     CUDNN_ACTIVATION_RELU,

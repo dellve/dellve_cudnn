@@ -69,12 +69,12 @@ namespace DELLve {
                 Benchmark benchmark = getBenchmark();
 
                 // warm up
-                CuDNN::checkStatus(benchmark());
+                CUDNN_CHECK_STATUS(benchmark());
                 cudaDeviceSynchronize();
 
                 for (currRun_ = 0; currRun_ < numRuns; currRun_++) {
                     auto start = clock::now();
-                    CuDNN::checkStatus(benchmark());
+                    CUDNN_CHECK_STATUS(benchmark());
                     cudaDeviceSynchronize();
                     auto end = clock::now();
 
@@ -92,13 +92,13 @@ namespace DELLve {
             std::thread([=](){
                 cudaSetDevice(deviceId);
                 Benchmark benchmark = getBenchmark();
-                CuDNN::checkStatus(benchmark());
+                CUDNN_CHECK_STATUS(benchmark());
                 cudaDeviceSynchronize();
                 
                 auto startTime = clock::now();
                 auto endTime = clock::time_point(startTime.time_since_epoch() + sec(seconds));
                 for (;;) {
-                    CuDNN::checkStatus(benchmark());
+                    CUDNN_CHECK_STATUS(benchmark());
                     cudaDeviceSynchronize();
 
                     auto currentTime = clock::now();
