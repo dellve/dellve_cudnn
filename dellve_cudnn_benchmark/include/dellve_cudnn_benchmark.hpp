@@ -72,7 +72,7 @@ namespace DELLve {
                 CUDNN_CHECK_STATUS(benchmark());
                 cudaDeviceSynchronize();
 
-                for (currRun_ = 0; currRun_ < numRuns; currRun_++) {
+                for (currRun_ = 1; currRun_ <= numRuns; currRun_++) {
                     auto start = clock::now();
                     CUDNN_CHECK_STATUS(benchmark());
                     cudaDeviceSynchronize();
@@ -82,7 +82,6 @@ namespace DELLve {
                     progress_ = ((float)(currRun_)) / numRuns;
                 }
                 cudaDeviceSynchronize();
-                progress_ = 1.0f;
             }).detach();
         }
 
