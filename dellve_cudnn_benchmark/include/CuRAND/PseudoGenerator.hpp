@@ -17,7 +17,7 @@ namespace CuRAND {
     public:
 
     	void setSeed(unsigned long long seed) {
-    		checkStatus(curandSetPseudoRandomGeneratorSeed(*this, seed));
+    		CURAND_CHECK_STATUS(curandSetPseudoRandomGeneratorSeed(*this, seed));
     	}
 
     	static PseudoGenerator create ( RngType type,

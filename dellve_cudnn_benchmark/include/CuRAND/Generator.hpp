@@ -16,11 +16,11 @@ namespace CuRAND {
             curandGenerator_t gen;
 
             RawGenerator(RngType type) {
-                checkStatus(curandCreateGenerator(&gen, type));
+                CURAND_CHECK_STATUS(curandCreateGenerator(&gen, type));
             }
 
             ~RawGenerator() {
-                checkStatus(curandDestroyGenerator(gen));
+                CURAND_CHECK_STATUS(curandDestroyGenerator(gen));
             }
 
             operator curandGenerator_t () {
@@ -38,48 +38,48 @@ namespace CuRAND {
     public:
 
         void setOffset(unsigned long long offset) {
-            checkStatus(curandSetGeneratorOffset(*this, offset));
+            CURAND_CHECK_STATUS(curandSetGeneratorOffset(*this, offset));
         }
 
         void setOrdering(curandOrdering_t order) {
-            checkStatus(curandSetGeneratorOrdering(*this, order));
+            CURAND_CHECK_STATUS(curandSetGeneratorOrdering(*this, order));
         }
 
         void SetPseudoRandomGeneratorSeed(unsigned long long seed) {
-            checkStatus(curandSetPseudoRandomGeneratorSeed(*this, seed));
+            CURAND_CHECK_STATUS(curandSetPseudoRandomGeneratorSeed(*this, seed));
         } 
 
         void generate(unsigned int *buffer, size_t n) {
-            checkStatus(curandGenerate(*this, buffer, n));
+            CURAND_CHECK_STATUS(curandGenerate(*this, buffer, n));
         }
         void generate(unsigned long long *buffer, size_t n){
-            checkStatus(curandGenerateLongLong(*this, buffer, n));
+            CURAND_CHECK_STATUS(curandGenerateLongLong(*this, buffer, n));
         }
 
         void generateUniform(float *buffer, size_t n){
-            checkStatus(curandGenerateUniform(*this, buffer, n));
+            CURAND_CHECK_STATUS(curandGenerateUniform(*this, buffer, n));
         }
         void generateUniform(double *buffer, size_t n){
-            checkStatus(curandGenerateUniformDouble(*this, buffer, n));
+            CURAND_CHECK_STATUS(curandGenerateUniformDouble(*this, buffer, n));
         }
 
         void generateNormal(float *buffer, size_t n, float mean, float stddev){
-            checkStatus(curandGenerateNormal(*this, buffer, n, mean, stddev));
+            CURAND_CHECK_STATUS(curandGenerateNormal(*this, buffer, n, mean, stddev));
         }
         
         void generateNormal(double *buffer, size_t n, double mean, double stddev){
-            checkStatus(curandGenerateNormalDouble(*this, buffer, n, mean, stddev));
+            CURAND_CHECK_STATUS(curandGenerateNormalDouble(*this, buffer, n, mean, stddev));
         }
 
         void generateLogNormal(float *buffer, size_t n, float mean, float stddev){
-            checkStatus(curandGenerateLogNormal(*this, buffer, n, mean, stddev));
+            CURAND_CHECK_STATUS(curandGenerateLogNormal(*this, buffer, n, mean, stddev));
         }
         void generateLogNormal(double *buffer, size_t n, double mean, double stddev){
-            checkStatus(curandGenerateLogNormalDouble(*this, buffer, n, mean, stddev));
+            CURAND_CHECK_STATUS(curandGenerateLogNormalDouble(*this, buffer, n, mean, stddev));
         }
 
         void generatePoisson(unsigned int *buffer, size_t n, double lambda){
-            checkStatus(curandGeneratePoisson(*this, buffer, n, lambda));
+            CURAND_CHECK_STATUS(curandGeneratePoisson(*this, buffer, n, lambda));
         } 
 
         operator curandGenerator_t () {

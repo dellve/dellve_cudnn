@@ -17,7 +17,7 @@ namespace CuRAND {
 	public:
 
 		void setDimensions (unsigned int numDimensions) {
-			checkStatus(curandSetQuasiRandomGeneratorDimensions(*this, numDimensions));
+			CURAND_CHECK_STATUS(curandSetQuasiRandomGeneratorDimensions(*this, numDimensions));
 		}
 
 		static QuasiGenerator create ( RngType type,
