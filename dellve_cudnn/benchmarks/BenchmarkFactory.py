@@ -42,7 +42,6 @@ class BenchmarkFactory(Benchmark):
 
     def routine(self):
         config = self.get_config()
-        self.print_config()
 
         control_constructor = self.get_controller()
         problem_set = self.get_problem_set()
@@ -88,10 +87,6 @@ class BenchmarkFactory(Benchmark):
         config['num_runs'] = self.config['num_runs']
 
         return config
-
-    def print_config(self):
-        print 'Launching stress tool with config values: '
-        print json.dumps(self.config, indent=4, separators=(',', ': '))
 
     def generate_report(self, problem_set, results):
         row_format = '{:>2}' + '{:>9}' * len(problem_set[0]) + '{:>10}'

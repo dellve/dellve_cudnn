@@ -44,10 +44,9 @@ class StressToolFactory(Benchmark):
 
     def routine(self):
         config = self.get_config()
-        self.print_config()
+        self.mem_util = config['mem_util']
 
         try:
-            self.mem_util = config['mem_util']
             self.controller = self.get_controller()
             self.controller.start_stress_tool(config['gpu_id'], config['seconds'])
 
@@ -80,7 +79,3 @@ class StressToolFactory(Benchmark):
         config['seconds'] = self.config['seconds']
 
         return config
-
-    def print_config(self):
-        print 'Launching stress tool with config values: '
-        print json.dumps(self.config, indent=4, separators=(',', ': '))
