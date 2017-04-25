@@ -81,8 +81,8 @@ namespace DELLve {
                     totalTimeMicro_ += std::chrono::duration_cast<usec>(end - start);
                     progress_ = ((float)(currRun_)) / numRuns;
                 }
-
                 cudaDeviceSynchronize();
+                progress_ = 1.0f;
             }).detach();
         }
 
