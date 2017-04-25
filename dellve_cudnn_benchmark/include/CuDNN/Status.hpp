@@ -54,11 +54,11 @@ namespace CuDNN {
                            " cuDNN library are correctly installed").c_str(); 
 				case CUDNN_STATUS_INTERNAL_ERROR:
 					return std::string("CuDNN.Exception: CUDNN_STATUS_INTERNAL_ERROR" + info + 
-                           "\nInternal cuDNN operation failed.").c_str();
+                           "\nInternal cuDNN operation failed").c_str();
 				case CUDNN_STATUS_NOT_SUPPORTED:
 					return std::string("CuDNN.Exception: CUDNN_STATUS_NOT_SUPPORTED" + info + 
                            "\nRequested functionality is not supported in cuDNN. Refer to the"
-                           " cuDNN docs to find version issues.").c_str();
+                           " cuDNN docs to find version issues").c_str();
 				case CUDNN_STATUS_LICENSE_ERROR:
 					return std::string("CuDNN.Exception: CUDNN_STATUS_LICENSE_ERROR" + info + 
                            "\nError can occur if requested functionality requires a license and"
