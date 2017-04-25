@@ -10,28 +10,28 @@ class ForwardActivationStressTool(StressToolFactory):
     name = 'ForwardActivationStressTool'
 
     def get_controller(self):
-        n,c,h,w = problem_size.calculate_nchw_forward(1,self.memutil)
+        n,c,h,w = problem_size.calculate_nchw_forward(1,self.mem_util)
         return dcb.activation_forward(w,h,c,n)
 
 class BackwardActivationStressTool(StressToolFactory): 
     name = 'BackwardActivationStressTool'
 
     def get_controller(self):
-        n,c,h,w = problem_size.calculate_nchw_activation_backward(1,self.memutil)
+        n,c,h,w = problem_size.calculate_nchw_activation_backward(1,self.mem_util)
         return dcb.activation_backward(w,h,c,n)
 
 class ForwardSoftmaxStressTool(StressToolFactory): 
     name = 'ForwardSoftmaxStressTool'
 
     def get_controller(self):
-        n,c,h,w = problem_size.calculate_nchw_forward(1,self.memutil)
+        n,c,h,w = problem_size.calculate_nchw_forward(1,self.mem_util)
         return dcb.softmax_forward(w,h,c,n,"fast")
 
 class BackwardSoftmaxStressTool(StressToolFactory): 
     name = 'BackwardSoftmaxStressTool'
 
     def get_controller(self):
-        n,c,h,w = problem_size.calculate_nchw_softmax_backward(1,self.memutil)
+        n,c,h,w = problem_size.calculate_nchw_softmax_backward(1,self.mem_util)
         return dcb.softmax_backward(w,h,c,n,"fast")
 
     
@@ -42,7 +42,7 @@ class ForwardPoolingStressTool(StressToolFactory):
         win = 3
         pad = 1
         stride = 1
-        n,c,h,w = problem_size.calculate_nchw_pooling(1,self.memutil,win,pad,stride)
+        n,c,h,w = problem_size.calculate_nchw_pooling(1,self.mem_util,win,pad,stride)
 
         controller = dcb.pooling_forward(w, h, c, n, win, win, pad, pad, stride, stride, "max")
         return controller
@@ -54,7 +54,7 @@ class BackwardPoolingStressTool(StressToolFactory):
         win = 3
         pad = 1
         stride = 1
-        n,c,h,w = problem_size.calculate_nchw_pooling(1,self.memutil,win,pad,stride)
+        n,c,h,w = problem_size.calculate_nchw_pooling(1,self.mem_util,win,pad,stride)
 
         controller = dcb.pooling_backward(w, h, c, n, win, win, pad, pad, stride, stride, "max")
         return controller
@@ -67,7 +67,7 @@ class ForwardConvolutionStressTool(StressToolFactory):
         pad = 1
         stride = 1
         k = 3
-        n,c,h,w = problem_size.calculate_nchw_convolution(1,self.memutil,k,win,pad,stride)
+        n,c,h,w = problem_size.calculate_nchw_convolution(1,self.mem_util,k,win,pad,stride)
         
         controller = dcb.convolution_forward(w, h, c, n, k, win, win, pad, pad, stride, stride)
         return controller
@@ -80,7 +80,7 @@ class BackwardConvolutionDataStressTool(StressToolFactory):
         pad = 1
         stride = 1
         k = 3
-        n,c,h,w = problem_size.calculate_nchw_convolution(1,self.memutil,k,win,pad,stride)
+        n,c,h,w = problem_size.calculate_nchw_convolution(1,self.mem_util,k,win,pad,stride)
         
         controller = dcb.convolution_backward_data(w, h, c, n, k, win, win, pad, pad, stride, stride)
         return controller

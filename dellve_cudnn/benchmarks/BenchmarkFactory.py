@@ -1,10 +1,35 @@
 from abc import ABCMeta, abstractmethod
+import json
+import re
 import time
 
 from dellve import Benchmark, BenchmarkInterrupt
 
 class BenchmarkFactory(Benchmark):
-    __metclass__ = ABCMeta
+    __metaclass__ = ABCMeta
+    config = {
+        'gpu': 'Device 1 : Tesla K10.G2.8GB',
+        'num_runs': 50,
+    }
+
+    schema = {
+        'type': 'object',
+        'properties': {
+            'gpu': {
+                'description': 'Device ID and name of GPU to run benchmark on',
+                'type': 'string',
+                'enum': ['Device 1 : Tesla K10.G2.8GB', 'Device 2 : Tesla K10.G2.8GB'],
+            },
+            'num_runs': {
+                'description': 'Number of times to run operation per problem size',
+                'type': 'integer',
+                'minimum': 25,
+                'maximum': 100,
+            },
+        },
+        'required': ['gpu', 'num_runs'],
+    }
+
 
     @abstractmethod
     def get_controller(self): pass
@@ -16,6 +41,9 @@ class BenchmarkFactory(Benchmark):
     def get_problem_header(self): pass
 
     def routine(self):
+        config = self.get_config()
+        self.print_config()
+
         control_constructor = self.get_controller()
         problem_set = self.get_problem_set()
         problem_set_size = len(problem_set)
@@ -26,7 +54,7 @@ class BenchmarkFactory(Benchmark):
             self.controller = control_constructor(*problem)
 
             try:
-                self.controller.start_benchmark(1, 50)
+                self.controller.start_benchmark(config['gpu_id'], config['num_runs'])
 
                 while (not self.complete()):
                     self.update_progress(problem_number, problem_set_size)
@@ -50,6 +78,21 @@ class BenchmarkFactory(Benchmark):
             self.progress = (problem_number * 100. / problem_set_size) \
                           + (p * 100 / problem_set_size)
 
+    def get_config(self):
+        config = {}
+
+        pattern = '(?:Device\s+)(\d+)'
+        match = re.match(pattern, self.config['gpu'])
+        config['gpu_id'] = int(match.group(1))
+
+        config['num_runs'] = self.config['num_runs']
+
+        return config
+
+    def print_config(self):
+        print 'Launching stress tool with config values: '
+        print json.dumps(self.config, indent=4, separators=(',', ': '))
+
     def generate_report(self, problem_set, results):
         row_format = '{:>2}' + '{:>9}' * len(problem_set[0]) + '{:>10}'
 
@@ -59,3 +102,4 @@ class BenchmarkFactory(Benchmark):
         for problem_number, result in enumerate(results):
             row = [problem_number] + problem_set[problem_number] + [result]
             print row_format.format(*row)
+
