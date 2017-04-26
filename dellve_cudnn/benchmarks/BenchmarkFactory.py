@@ -47,7 +47,7 @@ class BenchmarkFactory(Benchmark):
         problem_set = self.get_problem_set()
         problem_set_size = len(problem_set)
 
-        results = []
+        self.print_header(problem_set)
 
         for problem_number, problem in enumerate(problem_set):
             self.controller = control_constructor(*problem)
@@ -60,13 +60,13 @@ class BenchmarkFactory(Benchmark):
                     time.sleep(0.25)
 
                 self.update_progress(problem_number, problem_set_size)
-                results.append(self.controller.get_avg_time_micro())
+                self.generate_report(problem_set, problem_number, 
+                                     self.controller.get_avg_time_micro())
 
             except BenchmarkInterrupt:
                 print '\nCurrent benchmark has stopped'
                 break
 
-        self.generate_report(problem_set, results)
 
     def complete(self):
         return self.controller.get_progress() == 1.0
@@ -88,13 +88,15 @@ class BenchmarkFactory(Benchmark):
 
         return config
 
-    def generate_report(self, problem_set, results):
+    def print_header(self, problem_set):
         row_format = '{:>2}' + '{:>9}' * len(problem_set[0]) + '{:>10}'
 
         header = ['#'] + self.get_problem_header() + ['time (us)']
         print row_format.format(*header)
 
-        for problem_number, result in enumerate(results):
-            row = [problem_number] + problem_set[problem_number] + [result]
-            print row_format.format(*row)
+    def generate_report(self, problem_set, problem_number, result):
+        row_format = '{:>2}' + '{:>9}' * len(problem_set[0]) + '{:>10}'
+
+        row = [problem_number] + problem_set[problem_number] + [result]
+        print row_format.format(*row)
 
