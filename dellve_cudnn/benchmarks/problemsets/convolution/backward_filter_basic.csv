@@ -1,4 +1,4 @@
-w, h, c, n, k, r, s, pad_w, pad_h, wstride, hstride
+w, h, c, n, k, r, s, pad_h, pad_w, vstride, hstride
 700, 161, 1, 4, 32, 5, 20, 0, 0, 2, 2
 700, 161, 1, 8, 32, 5, 20, 0, 0, 2, 2
 700, 161, 1, 16, 32, 5, 20, 0, 0, 2, 2
