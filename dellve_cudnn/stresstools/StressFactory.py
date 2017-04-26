@@ -45,6 +45,7 @@ class StressToolFactory(Benchmark):
     def routine(self):
         config = self.get_config()
         self.mem_util = config['mem_util']
+        self.gpu_id = config['gpu_id']
 
         try:
             self.controller = self.get_controller()
