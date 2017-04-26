@@ -8,6 +8,9 @@ from StressFactory import StressToolFactory
 
 class ForwardActivationStressTool(StressToolFactory): 
     name = 'ForwardActivationStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the activation\noperation"
+                   " in cuDNN library with forward propagation."
+                  )
 
     def get_controller(self):
         n,c,h,w = problem_size.calculate_nchw_forward(1,self.mem_util)
@@ -15,6 +18,9 @@ class ForwardActivationStressTool(StressToolFactory):
 
 class BackwardActivationStressTool(StressToolFactory): 
     name = 'BackwardActivationStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the activation\noperation"
+                   " in cuDNN library with backward propagation."
+                  )
 
     def get_controller(self):
         n,c,h,w = problem_size.calculate_nchw_activation_backward(1,self.mem_util)
@@ -22,6 +28,9 @@ class BackwardActivationStressTool(StressToolFactory):
 
 class ForwardSoftmaxStressTool(StressToolFactory): 
     name = 'ForwardSoftmaxStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the softmax\noperation"
+                   " in cuDNN library with forward propagation."
+                  )
 
     def get_controller(self):
         n,c,h,w = problem_size.calculate_nchw_forward(1,self.mem_util)
@@ -29,6 +38,9 @@ class ForwardSoftmaxStressTool(StressToolFactory):
 
 class BackwardSoftmaxStressTool(StressToolFactory): 
     name = 'BackwardSoftmaxStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the softmax\noperation"
+                   " in cuDNN library with backward propagation."
+                  )
 
     def get_controller(self):
         n,c,h,w = problem_size.calculate_nchw_softmax_backward(1,self.mem_util)
@@ -37,6 +49,9 @@ class BackwardSoftmaxStressTool(StressToolFactory):
     
 class ForwardPoolingStressTool(StressToolFactory): 
     name = 'ForwardPoolingStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the pooling\noperation"
+                   " in cuDNN library with forward propagation."
+                  )
 
     def get_controller(self):
         win = 3
@@ -49,6 +64,9 @@ class ForwardPoolingStressTool(StressToolFactory):
 
 class BackwardPoolingStressTool(StressToolFactory): 
     name = 'BackwardPoolingStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the pooling\noperation"
+                   " in cuDNN library with backward propagation."
+                  )
 
     def get_controller(self):
         win = 3
@@ -61,6 +79,9 @@ class BackwardPoolingStressTool(StressToolFactory):
 
 class ForwardConvolutionStressTool(StressToolFactory):
     name = 'ForwardConvolutionStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the convolution\noperation"
+                   " in cuDNN library with forward propagation."
+                  )
 
     def get_controller(self):
         win = 3
@@ -74,6 +95,9 @@ class ForwardConvolutionStressTool(StressToolFactory):
 
 class BackwardConvolutionDataStressTool(StressToolFactory):
     name = 'BackwardConvolutionDataStressTool'
+    description = ("Stresses the GPU to 100% GPU Utilization using the convolution\noperation"
+                   " in cuDNN library with backward propagation."
+                  )
 
     def get_controller(self):
         win = 3
