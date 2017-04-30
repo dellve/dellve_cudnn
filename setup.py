@@ -29,7 +29,9 @@ class get_pybind_include(object):
 
 ext_modules = [
         Extension('dellve_cudnn_benchmark',
-            ['dellve_cudnn_benchmark/src/dellve_cudnn_benchmark.cpp'],
+            sources=[
+                'dellve_cudnn_benchmark/src/dellve_cudnn_benchmark.cpp',
+                ],
             include_dirs=[
                 'dellve_cudnn_benchmark/include/',
                 cuda_include,
@@ -53,7 +55,35 @@ ext_modules = [
                 ],
             language='c++'
         ),
-]
+
+        Extension('dellve_cudnn_helper',
+            sources=[
+                'dellve_cudnn_benchmark/src/dellve_cudnn_helper.cpp',
+                ],
+            include_dirs=[
+                'dellve_cudnn_benchmark/include/',
+                cuda_include,
+                cudnn_include,
+                get_pybind_include(),
+                get_pybind_include(user=True),
+                ],
+            libraries = [
+                'cuda',
+                'cudart',
+                'cudnn',
+                'curand'
+                ],
+            library_dirs=[
+                cuda_lib64,
+                cudnn_lib64
+                ],
+            extra_compile_args=[
+                '-std=c++11',
+                '-std=c++1y'
+                ],
+            language='c++'
+        ),
+    ]
 
 setup (
     name='dellve_cudnn',
