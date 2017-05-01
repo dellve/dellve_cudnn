@@ -93,7 +93,8 @@ setup (
     install_requires=[
         'dellve',
         'nvidia-ml-py',
-        'pybind11'
+        'pybind11',
+        'breathe'
     ],
     ext_modules=ext_modules,
     zip_safe=False,
