@@ -1,6 +1,6 @@
 import dellve_cudnn_benchmark as dcb
 from BenchmarkFactory import BenchmarkFactory
-from helper import problem_set as ps
+from helper import problem_set as ps, gpu_info
 
 
 class ForwardActivationBenchmark(BenchmarkFactory):
@@ -24,6 +24,13 @@ class ForwardActivationBenchmark(BenchmarkFactory):
 
     def get_problem_header(self):
         return ps.csv_get_header(self.csv_filename)
+
+    @classmethod
+    def init_config(cls):
+        available_gpus = gpu_info.get_valid_gpus()
+        super(ForwardActivationBenchmark, cls).config['gpu'] = available_gpus[0]
+        super(ForwardActivationBenchmark, cls).schema['properties']['gpu']['enum'] = available_gpus
+
 
 class BackwardActivationBenchmark(BenchmarkFactory):
     name = 'BackwardActivationBenchmark'

@@ -70,12 +70,6 @@ class StressToolFactory(Benchmark):
         if (p > 0):
             self.progress = p * 100
 
-    @classmethod
-    def init_config(cls):
-        available_gpus = gpu_info.get_valid_gpus()
-        cls.config['gpu'] = available_gpus[0]
-        cls.schema['properties']['gpu']['enum'] = available_gpus
-
     def get_config(self):
         config = {}
 
