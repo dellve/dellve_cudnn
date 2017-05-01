@@ -9,18 +9,15 @@ test tools.
 You can install Dellve CuDNN from our GitHub repo:
 
 .. code-block:: bash
+
     pip install git+https://github.com/dellve/dellve_cudnn.git
 
 API Reference
 =============
 
-.. automodule:: dellve_cudnn.stresstools.StressFactory
-    :members:
-.. automodule:: dellve_cudnn.stresstools.StressTools
-    :members:
 .. automodule:: dellve_cudnn.benchmarks.BenchmarkFactory
     :members:
-.. automodule:: dellve_cudnn.benchmarks.Benchmarks
+.. automodule:: dellve_cudnn.stresstools.StressFactory
     :members:
 
 System Architecture

@@ -1,3 +1,11 @@
+'''
+.. module:: stress_factory
+    :platform: Unix
+    :synopsis: Factory Stress Test Class
+
+.. moduleauthor:: DELLveTeam
+
+'''
 from abc import ABCMeta, abstractmethod
 import json
 import re
@@ -8,12 +16,25 @@ import dellve_cudnn_benchmark as dcb
 from helper import gpu_info
 
 class StressToolFactory(Benchmark):
+    '''Abstract factory class used by all stress tests in Dellve CuDNN.
+
+    Child classes simply extend this function and define:
+    :meth:`dellve_cudnn.stresstools.StressFactory.StressFactory.get_controller`
+    '''
     __metaclass__ = ABCMeta
+
     config = {
         'gpu': '',
         'mem_util': 50,
         'seconds': 20,
     }
+    '''Defines configuration defaults for dellve.
+
+    Parameters:
+        gpu: GPU to run benchmark.
+        mem_util: Memory % to use for each stress test.
+        seconds: Number of seconds to run the stress test for.
+    '''
 
     schema = {
         'type': 'object',
@@ -41,10 +62,25 @@ class StressToolFactory(Benchmark):
 
 
     @abstractmethod
-    def get_controller(self): pass
+    def get_controller(self): 
+        '''See:
+
+        :meth:`dellve_cudnn.benchmarks.BenchmarkFactory.BenchmarkFactory.get_controller`
+        '''
+        pass
 
     def routine(self):
-        config = self.get_config()
+        '''Extension of dellve routine which specifies the function of
+        each tool run when executed through the main program.
+
+        Set up configuration required to run each test using the mem_util 
+        provided. Then for each problem set, start the stress test 
+        by passing in the gpu_id and number of seconds. 
+
+        Periodically profile the stress tool to check progress and update
+        the progress to the main program.
+        '''
+        config = self.__get_config()
         self.mem_util = config['mem_util']
         self.gpu_id = config['gpu_id']
 
@@ -52,25 +88,25 @@ class StressToolFactory(Benchmark):
             self.controller = self.get_controller()
             self.controller.start_stress_tool(config['gpu_id'], config['seconds'])
 
-            while (not self.complete()):
-                self.update_progress()
+            while (not self.__complete()):
+                self.__update_progress()
                 time.sleep(0.1)
 
-            self.update_progress()
+            self.__update_progress()
             # TODO: output performance details
 
         except BenchmarkInterrupt:
             print '\nCurrent stress tool has stopped'
 
-    def complete(self):
+    def __complete(self):
         return self.controller.get_progress() == 1.0
 
-    def update_progress(self):
+    def __update_progress(self):
         p = self.controller.get_progress()
         if (p > 0):
             self.progress = p * 100
 
-    def get_config(self):
+    def __get_config(self):
         config = {}
 
         pattern = '(?:Device\s+)(\d+)'
