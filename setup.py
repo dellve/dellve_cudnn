@@ -6,10 +6,12 @@ import setuptools
 import os
 import os.path
 
-cuda_path       = os.environ['CUDA_PATH']
+cuda_path       = '/usr/lib/cuda'
+#cuda_path       = os.environ['CUDA_PATH']
 cuda_include    = os.path.join(cuda_path, "include")
 cuda_lib64      = os.path.join(cuda_path, "lib64")
-cudnn_path      = os.environ['CUDNN_PATH']
+#cudnn_path      = os.environ['CUDNN_PATH']
+cudnn_path      = '/usr/lib/cudnn'
 cudnn_include   = os.path.join(cudnn_path, "include")
 cudnn_lib64     = os.path.join(cudnn_path, "lib64")
 
