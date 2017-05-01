@@ -4,6 +4,7 @@
 #include <iostream>
 
 #include <cuda.h>
+#include <cudnn.h>
 #include <CuDNN/Handle.hpp>
 
 namespace DELLve {
@@ -16,7 +17,7 @@ namespace DELLve {
 
         // try and instantiate CuDNN library context
         try {
-            CuDNN::Handle();
+            CuDNN::Handle handle;
         } catch (...) {
             return false;
         }

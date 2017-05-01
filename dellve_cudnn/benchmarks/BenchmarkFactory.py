@@ -4,11 +4,12 @@ import re
 import time
 
 from dellve import Benchmark, BenchmarkInterrupt
+from helper import gpu_info
 
 class BenchmarkFactory(Benchmark):
     __metaclass__ = ABCMeta
     config = {
-        'gpu': 'Device 1 : Tesla K10.G2.8GB',
+        'gpu': '',
         'num_runs': 50,
     }
 
@@ -18,7 +19,7 @@ class BenchmarkFactory(Benchmark):
             'gpu': {
                 'description': 'Device ID and name of GPU to run benchmark on',
                 'type': 'string',
-                'enum': ['Device 1 : Tesla K10.G2.8GB', 'Device 2 : Tesla K10.G2.8GB'],
+                'enum': ['']
             },
             'num_runs': {
                 'description': 'Number of times to run operation per problem size',
@@ -29,7 +30,6 @@ class BenchmarkFactory(Benchmark):
         },
         'required': ['gpu', 'num_runs'],
     }
-
 
     @abstractmethod
     def get_controller(self): pass
@@ -76,6 +76,12 @@ class BenchmarkFactory(Benchmark):
         if (p > 0):
             self.progress = (problem_number * 100. / problem_set_size) \
                           + (p * 100 / problem_set_size)
+
+    @classmethod
+    def init_config(cls):
+        available_gpus = gpu_info.get_valid_gpus()
+        cls.config['gpu'] = available_gpus[0]
+        cls.schema['properties']['gpu']['enum'] = available_gpus
 
     def get_config(self):
         config = {}

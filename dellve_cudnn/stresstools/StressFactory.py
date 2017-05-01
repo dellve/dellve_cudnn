@@ -5,13 +5,14 @@ import time
 
 from dellve import Benchmark, BenchmarkInterrupt
 import dellve_cudnn_benchmark as dcb
+from helper import gpu_info
 
 class StressToolFactory(Benchmark):
     __metaclass__ = ABCMeta
     config = {
-        'gpu': 'Device 1 : Tesla K10.G2.8GB',
+        'gpu': '',
         'mem_util': 50,
-        'seconds': 10,
+        'seconds': 20,
     }
 
     schema = {
@@ -20,7 +21,7 @@ class StressToolFactory(Benchmark):
             'gpu': {
                 'description': 'Device ID and name of GPU to run benchmark on',
                 'type': 'string',
-                'enum': ['Device 1 : Tesla K10.G2.8GB', 'Device 2 : Tesla K10.G2.8GB'],
+                'enum': [''],
             },
             'mem_util': {
                 'description': 'GPU memory utilization in %',
@@ -68,6 +69,12 @@ class StressToolFactory(Benchmark):
         p = self.controller.get_progress()
         if (p > 0):
             self.progress = p * 100
+
+    @classmethod
+    def init_config(cls):
+        available_gpus = gpu_info.get_valid_gpus()
+        cls.config['gpu'] = available_gpus[0]
+        cls.schema['properties']['gpu']['enum'] = available_gpus
 
     def get_config(self):
         config = {}

@@ -27,11 +27,3 @@ def get_valid_gpus():
         gpu_names_list.append(gpu_names_queue.get())
 
     return gpu_names_list
-
-def get_total_mem(device_id):
-    nvmlInit()
-    handle = nvmlDeviceGetHandleByIndex(device_id)
-    mem = nvmlDeviceGetMemoryInfo(handle).total
-    nvmlShutdown()
-
-    return mem
