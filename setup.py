@@ -6,7 +6,7 @@ import setuptools
 import os
 import os.path
 
-if(os.environ.has_key('CUDA_PATH'):
+if(os.environ.has_key('CUDA_PATH')):
     cuda_path       = os.environ['CUDA_PATH']
     cudnn_path      = os.environ['CUDNN_PATH']
 else:
