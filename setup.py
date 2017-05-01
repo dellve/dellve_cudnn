@@ -6,12 +6,14 @@ import setuptools
 import os
 import os.path
 
-cuda_path       = '/usr/lib/cuda'
-#cuda_path       = os.environ['CUDA_PATH']
+if(os.environ.has_key('CUDA_PATH'):
+    cuda_path       = os.environ['CUDA_PATH']
+    cudnn_path      = os.environ['CUDNN_PATH']
+else:
+    cuda_path       = ''
+    cudnn_path      = ''
 cuda_include    = os.path.join(cuda_path, "include")
 cuda_lib64      = os.path.join(cuda_path, "lib64")
-#cudnn_path      = os.environ['CUDNN_PATH']
-cudnn_path      = '/usr/lib/cudnn'
 cudnn_include   = os.path.join(cudnn_path, "include")
 cudnn_lib64     = os.path.join(cudnn_path, "lib64")
 
@@ -29,7 +31,8 @@ class get_pybind_include(object):
         import pybind11
         return pybind11.get_include(self.user)
 
-ext_modules = [
+if(cuda_path is not ''):
+    ext_modules = [
         Extension('dellve_cudnn_benchmark',
             sources=[
                 'dellve_cudnn_benchmark/src/dellve_cudnn_benchmark.cpp',
@@ -86,6 +89,8 @@ ext_modules = [
             language='c++'
         ),
     ]
+else:
+    ext_modules = []
 
 setup (
     name='dellve_cudnn',
