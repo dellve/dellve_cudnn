@@ -2,13 +2,13 @@ Getting Started
 ===============
 
 Dellve CuDNN is one of the tools that are used as an extension to the main
-project `Dellve Deep <https://https://github.com/dellve/dellve_benchend>`_ on
+project `Dellve Deep <https://github.com/dellve/dellve_benchend>`_ on
 GitHub. This tool utilizes NVIDIA cuDNN operations as benchmark and stress 
 test tools.
 
 You can install Dellve CuDNN from our GitHub repo:
 
-.. code-block::bash
+.. code-block:: bash
     pip install git+https://github.com/dellve/dellve_cudnn.git
 
 API Reference
