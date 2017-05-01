@@ -49,16 +49,36 @@ namespace DELLve {
     typedef std::chrono::seconds sec;
     typedef std::chrono::high_resolution_clock clock;
 
+    /**
+     * Controller class that speficies the actual runtime execution of each
+     * tool in Dellve CuDNN. Provides functions that allows profiling of current
+     * status of the exeuction.
+     *
+     * Assumes that BenchmarkDriver has been ran with the function of current
+     * operation as desired.
+     */
     class BenchmarkController {
-       
         volatile float progress_;
 
-        // Benchmark variables
         int currRun_;
         usec totalTimeMicro_;
 
     public:
-        
+        /**
+         * Starts a benchmark tool.
+         *
+         * Sets device to desired GPU. Warms up the test by running 
+         * a singular operation and synchronizing. Then, runs the operation
+         * the specified number of times. Through each run, calculates 
+         * time it took to run the current method and sets the progress
+         * of the current run by the number of loops ran.
+         *
+         * This is done in a different thread so that external calls can
+         * be made to this class to profile the current status.
+         *
+         * @param deviceId - Device ID to run test on
+         * @param numRuns - Number of repeats
+         */ 
         void startBenchmark(int deviceId, int numRuns) {
             progress_ = 0.0f;
             currRun_ = -1;
@@ -85,6 +105,20 @@ namespace DELLve {
             }).detach();
         }
 
+        /**
+         * Starts a stress test tool.
+         *
+         * Sets device to desired GPU. Starts the clock and runs the
+         * benchmark until desired elapsed time has been reached. Through
+         * each run, sets the progress of the test by the number of seconds
+         * elapsed. 
+         *
+         * This is also done in a separate thread so that external calls can
+         * be made to this class to profile the current status.
+         *
+         * @param deviceId - Device ID to run test on
+         * @param seconds - Number of seconds to run the test
+         */
         void startStressTool(int deviceId, int seconds) {
             progress_ = 0.0f;
 
@@ -115,10 +149,23 @@ namespace DELLve {
             }).detach();
         }
 
+        /**
+         * Returns the progress set by the tests.
+         *
+         * @return float - Progress of the current tool.
+         */
         float getProgress() const {
             return progress_;
         }
 
+        /**
+         * Returns the average time taken to run the current problem set in
+         * the benchmarks.
+         *
+         * Should not be called by Stress Tools.
+         *
+         * @return int - Average time in microsends taken for each benchmark.
+         */
         int getAvgTimeMicro() const {
             int totalTimeMicro = static_cast<int>(totalTimeMicro_.count());
             return totalTimeMicro / currRun_;

@@ -35,13 +35,19 @@ namespace DELLve {
         }
 
         /**
-         * Run the softmax forward method given the data pointers to the GPU memory associated with 
-         * x_desc, and y_desc.
+         * CuDNN Softmax Forward
          *
-         **** Inputs
-         * x - Tensor class associated with the tensor descriptor x_desc (input).
-         * y - Tensor class associated with the tensor descriptor y_desc (output). 
-         */ 
+         * Build 4D tensors using NCHW provided. Fill the input with random 
+         * data using the cuRAND library. Then, set up the function that 
+         * will run the operation with forward propagation with algorithm
+         * specified.
+         *
+         * @param w - Width of each feature map
+         * @param h - Height of each feature map 
+         * @param c - Number of feature maps per image
+         * @param n - Number of feature maps
+         * @param alg - Algorithm to run. Can be fast, accurate, or log
+         */
         template <typename T>
         DELLve::Benchmark forward(int w, int h, int c, int n, std::string alg) {
             CuDNN::Handle handle;
@@ -64,13 +70,14 @@ namespace DELLve {
         }
 
         /**
-         * Run the softmax backward method given the data pointers to the GPU memory associated with
-         * the input tensor, the input differential tensor, and the output tensor.
+         * CuDNN Softmax Backward
          *
-         **** Inputs
-         * y - Tensor class associated with the tensor descriptor y_desc (output).
-         * dY - Tensor class associated with the input differential tensor.
-         * dX - Tensor class associated with the output tensor. 
+         * Build 4D tensors using NCHW provided. Fill the input with random 
+         * data using the cuRAND library. Then, set up the function that 
+         * will run the operation with backward propagation with algorithm
+         * specified.
+         *
+         * @see See forward for parameter details
          */
         template <typename T>
         DELLve::Benchmark backward(int w, int h, int c, int n, std::string alg) {

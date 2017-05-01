@@ -1,0 +1,359 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dellve__cudnn__activation_8hpp" kind="file">
+    <compoundname>dellve_cudnn_activation.hpp</compoundname>
+    <includes local="no">vector</includes>
+    <includes local="no">string</includes>
+    <includes local="no">cudnn.h</includes>
+    <includes local="no">iostream</includes>
+    <includes refid="dellve__cudnn__benchmark_8hpp" local="yes">dellve_cudnn_benchmark.hpp</includes>
+    <includes refid="dellve__constants_8hpp" local="yes">dellve_constants.hpp</includes>
+    <includes refid="dellve__tensor__curand__helper_8hpp" local="yes">dellve_tensor_curand_helper.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/PseudoGenerator.hpp</includes>
+    <includes local="no">unordered_set</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/Generator.hpp</includes>
+    <includes local="no">memory</includes>
+    <includes local="no">curand.h</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/Ordering.hpp</includes>
+    <includes local="no">functional</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/RngType.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/Status.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/QuasiGenerator.hpp</includes>
+    <includes local="no">numeric</includes>
+    <includes local="no">tuple</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/Buffer.hpp</includes>
+    <includes local="no">cuda.h</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/DataType.hpp</includes>
+    <includes local="no">cstdint</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/TensorDescriptor.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/RAII.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/Status.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/FilterDescriptor.hpp</includes>
+    <includes local="yes">/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/TensorFormat.hpp</includes>
+    <includes local="yes">CuDNN/ActivationDescriptor.hpp</includes>
+    <includes local="yes">CuDNN/Handle.hpp</includes>
+    <includes local="yes">CuDNN/Status.hpp</includes>
+    <includes local="yes">CuDNN/Tensor.hpp</includes>
+    <incdepgraph>
+      <node id="23">
+        <label>CuDNN/Tensor.hpp</label>
+      </node>
+      <node id="10">
+        <label>dellve_cudnn_benchmark.hpp</label>
+        <link refid="dellve__cudnn__benchmark_8hpp_source"/>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>functional</label>
+      </node>
+      <node id="41">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/Status.hpp</label>
+      </node>
+      <node id="14">
+        <label>cuda_device_runtime_api.h</label>
+      </node>
+      <node id="39">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/TensorDescriptor.hpp</label>
+      </node>
+      <node id="22">
+        <label>CuRAND/CuRAND.hpp</label>
+      </node>
+      <node id="42">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/FilterDescriptor.hpp</label>
+      </node>
+      <node id="38">
+        <label>cstdint</label>
+      </node>
+      <node id="33">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/Status.hpp</label>
+      </node>
+      <node id="24">
+        <label>CuDNN/Filter.hpp</label>
+      </node>
+      <node id="8">
+        <label>cudnn.h</label>
+      </node>
+      <node id="35">
+        <label>numeric</label>
+      </node>
+      <node id="32">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/RngType.hpp</label>
+      </node>
+      <node id="7">
+        <label>string</label>
+      </node>
+      <node id="36">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/Buffer.hpp</label>
+      </node>
+      <node id="27">
+        <label>unordered_set</label>
+      </node>
+      <node id="5">
+        <label>dellve_cudnn_activation.hpp</label>
+        <link refid="dellve_cudnn_activation.hpp"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>CuDNN/Handle.hpp</label>
+      </node>
+      <node id="34">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/QuasiGenerator.hpp</label>
+      </node>
+      <node id="43">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/TensorFormat.hpp</label>
+      </node>
+      <node id="15">
+        <label>CuDNN/Status.hpp</label>
+      </node>
+      <node id="18">
+        <label>tuple</label>
+      </node>
+      <node id="20">
+        <label>dellve_constants.hpp</label>
+        <link refid="dellve__constants_8hpp_source"/>
+      </node>
+      <node id="6">
+        <label>vector</label>
+      </node>
+      <node id="11">
+        <label>pybind11/pybind11.h</label>
+      </node>
+      <node id="26">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/PseudoGenerator.hpp</label>
+      </node>
+      <node id="31">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/Ordering.hpp</label>
+      </node>
+      <node id="21">
+        <label>dellve_tensor_curand_helper.hpp</label>
+        <link refid="dellve__tensor__curand__helper_8hpp_source"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>iostream</label>
+      </node>
+      <node id="13">
+        <label>cuda.h</label>
+      </node>
+      <node id="19">
+        <label>chrono</label>
+      </node>
+      <node id="37">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/DataType.hpp</label>
+      </node>
+      <node id="44">
+        <label>CuDNN/ActivationDescriptor.hpp</label>
+      </node>
+      <node id="17">
+        <label>thread</label>
+      </node>
+      <node id="40">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuDNN/RAII.hpp</label>
+      </node>
+      <node id="28">
+        <label>/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/CuRAND/Generator.hpp</label>
+      </node>
+      <node id="30">
+        <label>curand.h</label>
+      </node>
+      <node id="29">
+        <label>memory</label>
+      </node>
+      <node id="25">
+        <label>initializer_list</label>
+      </node>
+      <node id="12">
+        <label>pybind11/stl.h</label>
+      </node>
+    </incdepgraph>
+    <innernamespace refid="namespaceDELLve">DELLve</innernamespace>
+    <innernamespace refid="namespaceDELLve_1_1Activation">DELLve::Activation</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DELLVE_CUDNNACTIVATION_HPP_</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DELLVE_CUDNNACTIVATION_HPP_</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;vector&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;cudnn.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;iostream&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dellve_cudnn_benchmark.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dellve_constants.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;dellve_tensor_curand_helper.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CuDNN/ActivationDescriptor.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CuDNN/Handle.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CuDNN/Status.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;CuDNN/Tensor.hpp&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">DELLve<sp/>{</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Activation<sp/>{</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CuDNN::ActivationDescriptor<sp/>createDescriptor(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CuDNN::ActivationDescriptor<sp/>descriptor;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CUDNN_CHECK_STATUS<sp/>(</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>cudnnSetActivationDescriptor<sp/>(<sp/></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>descriptor,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CUDNN_ACTIVATION_RELU,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CUDNN_NOT_PROPAGATE_NAN,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0.0</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>)</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>descriptor;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DELLve::Benchmark<sp/>forward<sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CuDNN::Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>descriptor<sp/>=<sp/>createDescriptor();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>CuDNN::Tensor&lt;T&gt;::createNCHW(n,<sp/>c,<sp/>h,<sp/>w);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>CuDNN::Tensor&lt;T&gt;::createNCHW(n,<sp/>c,<sp/>h,<sp/>w);</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDELLve_1_1CurandTensor" kindref="compound">DELLve::CurandTensor&lt;T&gt;::fillTensorsRand</ref>({x});</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[=]()<sp/>{</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cudnnActivationForward<sp/>(</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handle,</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>descriptor,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;CuDNN::Constants::alpha,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x.getDescriptor(),</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;CuDNN::Constants::beta,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y.getDescriptor(),</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y<sp/></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};<sp/><sp/></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DELLve::Benchmark<sp/>backward<sp/>(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>w,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>h,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>n<sp/>)<sp/>{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CuDNN::Handle<sp/>handle;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>descriptor<sp/>=<sp/>createDescriptor();</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>x<sp/>=<sp/>CuDNN::Tensor&lt;T&gt;::createNCHW(n,<sp/>c,<sp/>h,<sp/>w);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>y<sp/>=<sp/>CuDNN::Tensor&lt;T&gt;::createNCHW(n,<sp/>c,<sp/>h,<sp/>w);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dx<sp/>=<sp/>CuDNN::Tensor&lt;T&gt;::createNCHW(n,<sp/>c,<sp/>h,<sp/>w);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>dy<sp/>=<sp/>CuDNN::Tensor&lt;T&gt;::createNCHW(n,<sp/>c,<sp/>h,<sp/>w);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classDELLve_1_1CurandTensor" kindref="compound">DELLve::CurandTensor&lt;T&gt;::fillTensorsRand</ref>({y,dy});</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>[=]()<sp/>{</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>cudnnActivationBackward<sp/>(</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>handle,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>descriptor,</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;CuDNN::Constants::alpha,</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y.getDescriptor(),</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>y,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dy.getDescriptor(),</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dy,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x.getDescriptor(),</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>x,</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;CuDNN::Constants::beta,</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dx.getDescriptor(),</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>dx</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//DELLVE_CUDNNACTIVATION_HPP_</highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_activation.hpp"/>
+  </compounddef>
+</doxygen>

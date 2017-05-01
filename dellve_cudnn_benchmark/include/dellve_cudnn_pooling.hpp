@@ -34,11 +34,32 @@ namespace DELLve {
             }
         }
 
+        /**
+         * CuDNN Pooling Forward
+         *
+         * Build 4D tensors using NCHW provided. Fill the input with random 
+         * data using the cuRAND library. Then, calculate the forward 
+         * output dimensions and set up a 4d tensor for output. Finally,
+         * return the function to run the operation with forward 
+         * propagation.
+         *
+         * @param w - Width of each feature map
+         * @param h - Height of each feature map 
+         * @param c - Number of feature maps per image
+         * @param n - Number of feature maps
+         * @param winH - Height of pooling window
+         * @param winW - Width of pooling window
+         * @param padH - Height of the zero padding
+         * @param padW - Width of the zero padding
+         * @param vStride - Pooling vertical stride
+         * @param hStride - Pooling horizontal stride
+         * @param mode - Pooling mode ot run. Can be max, avgpad, avgnopad
+         */
         template <typename T>
         DELLve::Benchmark forward(int w, int h, int c, int n, 
                                   int winH, int winW, 
                                   int padH, int padW, 
-                                  int hStride, int wStride,
+                                  int vStride, int hStride,
                                   std::string mode) {
 
             CuDNN::Handle handle;
@@ -77,6 +98,17 @@ namespace DELLve {
             };
         }
 
+        /**
+         * CuDNN Pooling Backward
+         *
+         * Build 4D tensors using NCHW provided. Fill the input with random 
+         * data using the cuRAND library. Then, calculate the backward
+         * output dimensions and set up a 4d tensor for output. Finally,
+         * return the function to run the operation with backward
+         * propagation.
+         *
+         * @see See forward for parameter details
+         */
         template <typename T>
         DELLve::Benchmark backward(int w, int h, int c, int n, 
                                    int winH, int winW, 

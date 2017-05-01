@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespaceCuDNN" kind="namespace">
+    <compoundname>CuDNN</compoundname>
+    <innernamespace refid="namespaceCuDNN_1_1Constants">CuDNN::Constants</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp" line="4" column="1"/>
+  </compounddef>
+</doxygen>

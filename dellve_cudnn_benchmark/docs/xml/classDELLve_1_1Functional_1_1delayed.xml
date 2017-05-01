@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classDELLve_1_1Functional_1_1delayed" kind="class" prot="public">
+    <compoundname>DELLve::Functional::delayed</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename T</type>
+      </param>
+      <param>
+        <type>typename...</type>
+        <declname>Args</declname>
+        <defname>Args</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDELLve_1_1Functional_1_1delayed_1a34386ee603abcfbd2075e10ff62b8361" prot="private" static="no" mutable="no">
+        <type>std::tuple&lt; Args...&gt;</type>
+        <definition>std::tuple&lt;Args...&gt; DELLve::Functional::delayed&lt; T, Args &gt;::args_</definition>
+        <argsstring></argsstring>
+        <name>args_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="31" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDELLve_1_1Functional_1_1delayed_1add1c328c70c7d3817f25c63e14decee4" prot="private" static="no" mutable="no">
+        <type>T(*</type>
+        <definition>T(* DELLve::Functional::delayed&lt; T, Args &gt;::func_)(Args...)</definition>
+        <argsstring>)(Args...)</argsstring>
+        <name>func_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="32" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDELLve_1_1Functional_1_1delayed_1a0c618a5905c9030ed65b0a8611ab4d2d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DELLve::Functional::delayed&lt; T, Args &gt;::delayed</definition>
+        <argsstring>(T(*f)(Args...), std::tuple&lt; Args...&gt; a)</argsstring>
+        <name>delayed</name>
+        <param>
+          <type>T(*)(Args...)</type>
+          <declname>f</declname>
+        </param>
+        <param>
+          <type>std::tuple&lt; Args...&gt;</type>
+          <declname>a</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="34" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="34" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1Functional_1_1delayed_1afbe30529563b7f27f29ac99cd990d6be" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T DELLve::Functional::delayed&lt; T, Args &gt;::call</definition>
+        <argsstring>() const </argsstring>
+        <name>call</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="36" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="36" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDELLve_1_1Functional_1_1delayed_1a72b1d246189e1f219306613e46b266a4" prot="private" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>int...</type>
+            <declname>S</declname>
+            <defname>S</defname>
+          </param>
+        </templateparamlist>
+        <type>T</type>
+        <definition>T DELLve::Functional::delayed&lt; T, Args &gt;::callWithArgs</definition>
+        <argsstring>(seq&lt; S...&gt;) const </argsstring>
+        <name>callWithArgs</name>
+        <param>
+          <type><ref refid="structDELLve_1_1Functional_1_1seq" kindref="compound">seq</ref>&lt; S...&gt;</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="41" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="41" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="30" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="30" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classDELLve_1_1Functional_1_1delayed_1a34386ee603abcfbd2075e10ff62b8361" prot="private" virt="non-virtual"><scope>DELLve::Functional::delayed</scope><name>args_</name></member>
+      <member refid="classDELLve_1_1Functional_1_1delayed_1afbe30529563b7f27f29ac99cd990d6be" prot="public" virt="non-virtual"><scope>DELLve::Functional::delayed</scope><name>call</name></member>
+      <member refid="classDELLve_1_1Functional_1_1delayed_1a72b1d246189e1f219306613e46b266a4" prot="private" virt="non-virtual"><scope>DELLve::Functional::delayed</scope><name>callWithArgs</name></member>
+      <member refid="classDELLve_1_1Functional_1_1delayed_1a0c618a5905c9030ed65b0a8611ab4d2d" prot="public" virt="non-virtual"><scope>DELLve::Functional::delayed</scope><name>delayed</name></member>
+      <member refid="classDELLve_1_1Functional_1_1delayed_1add1c328c70c7d3817f25c63e14decee4" prot="private" virt="non-virtual"><scope>DELLve::Functional::delayed</scope><name>func_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

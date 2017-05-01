@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="dellve__constants_8hpp" kind="file">
+    <compoundname>dellve_constants.hpp</compoundname>
+    <includedby refid="dellve__cudnn__activation_8hpp" local="yes">dellve_cudnn_activation.hpp</includedby>
+    <includedby refid="dellve__cudnn__pooling_8hpp" local="yes">dellve_cudnn_pooling.hpp</includedby>
+    <includedby refid="dellve__cudnn__softmax_8hpp" local="yes">dellve_cudnn_softmax.hpp</includedby>
+    <invincdepgraph>
+      <node id="4">
+        <label>dellve_cudnn_softmax.hpp</label>
+        <link refid="dellve__cudnn__softmax_8hpp_source"/>
+      </node>
+      <node id="2">
+        <label>dellve_cudnn_activation.hpp</label>
+        <link refid="dellve__cudnn__activation_8hpp_source"/>
+      </node>
+      <node id="1">
+        <label>dellve_constants.hpp</label>
+        <link refid="dellve_constants.hpp"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>dellve_cudnn_pooling.hpp</label>
+        <link refid="dellve__cudnn__pooling_8hpp_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespaceCuDNN">CuDNN</innernamespace>
+    <innernamespace refid="namespaceCuDNN_1_1Constants">CuDNN::Constants</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>DELLVE_CONSTANTS_H_</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>DELLVE_CONSTANTS_H_</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">CuDNN<sp/>{</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Constants<sp/>{</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>alpha<sp/>=<sp/>1.0f;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">float</highlight><highlight class="normal"><sp/>beta<sp/>=<sp/>0.0f;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="9"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//DELLVE_CONSTANTS_H_</highlight></codeline>
+<codeline lineno="12"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp"/>
+  </compounddef>
+</doxygen>

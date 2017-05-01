@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespaceCuDNN_1_1Constants" kind="namespace">
+    <compoundname>CuDNN::Constants</compoundname>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="namespaceCuDNN_1_1Constants_1ad236ed62a587c27c28d4031633c73313" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float CuDNN::Constants::alpha</definition>
+        <argsstring></argsstring>
+        <name>alpha</name>
+        <initializer>= 1.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp" line="6" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="namespaceCuDNN_1_1Constants_1a443d028e487d1b1726b556dc5cb093f6" prot="public" static="yes" mutable="no">
+        <type>const float</type>
+        <definition>const float CuDNN::Constants::beta</definition>
+        <argsstring></argsstring>
+        <name>beta</name>
+        <initializer>= 0.0f</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp" line="7" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_constants.hpp" line="5" column="1"/>
+  </compounddef>
+</doxygen>

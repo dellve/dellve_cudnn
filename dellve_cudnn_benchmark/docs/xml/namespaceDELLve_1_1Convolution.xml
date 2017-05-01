@@ -1,0 +1,279 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespaceDELLve_1_1Convolution" kind="namespace">
+    <compoundname>DELLve::Convolution</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDELLve_1_1Convolution_1a85609fee41b162273cbe85e79cca9e4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>DELLve::Benchmark</type>
+        <definition>DELLve::Benchmark DELLve::Convolution::forward</definition>
+        <argsstring>(int w, int h, int c, int n, int k, int r, int s, int padW, int padH, int strideV, int strideH)</argsstring>
+        <name>forward</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padW</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padH</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strideV</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strideH</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CuDNN Convolution Forward</para><para>Build 4D tensors using NCHW and KCRS provided for input and filter respectively. Then, create the output tensor by calculating the forward output dimensions of convolution. Finally, set up the workspace required and return the function that will run the operation with forward propagation.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Width of input image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Height of input image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of channels per input image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of input images </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>k</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of filters </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>r</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Height of filter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>s</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Width of filter </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>padW</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Width of zero padding </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>padH</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Height of zero padding </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strideV</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Filter vertical stride </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strideH</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Filter horizontal stride </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Create convolution input tensor</para><para>Create convolution filter</para><para>Create convolution descriptor</para><para>Calculate convolution output dimensions</para><para>Create output tensor</para><para>Create workspace buffer</para><para>Retun new benchmark</para>        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" line="42" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" bodystart="42" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDELLve_1_1Convolution_1a13056898df8299d4cb17203a01ccd3c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>DELLve::Benchmark</type>
+        <definition>DELLve::Benchmark DELLve::Convolution::backwardData</definition>
+        <argsstring>(int w, int h, int c, int n, int k, int r, int s, int padW, int padH, int strideW, int strideH)</argsstring>
+        <name>backwardData</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padW</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padH</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strideW</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strideH</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CuDNN Convolution Backward Data</para><para>Build 4D tensors using NCHW and KCRS provided for input and filter respectively. Then, create the output tensor by calculating the forward output dimensions of convolution. Finally, set up the workspace required and return the function that will run the operation with backward propagation respective to data.</para><para><simplesect kind="see"><para>See forward for parameter details </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Create convolution input tensor</para><para>Create convolution filter</para><para>Create convolution descriptor</para><para>Calculate convolution output dimensions</para><para>Create output tensor</para><para>Create workspace buffer</para><para>Retun new benchmark</para>        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" line="144" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" bodystart="144" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDELLve_1_1Convolution_1af6f065ad6020684cbb1b41440c5b7b21" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>DELLve::Benchmark</type>
+        <definition>DELLve::Benchmark DELLve::Convolution::backwardFilter</definition>
+        <argsstring>(int w, int h, int c, int n, int k, int r, int s, int padW, int padH, int strideW, int strideH)</argsstring>
+        <name>backwardFilter</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>k</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>r</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>s</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padW</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>padH</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strideW</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>strideH</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CuDNN Convolution Backward Filter</para><para>Build 4D tensors using NCHW and KCRS provided for input and filter respectively. Then, create the output tensor by calculating the forward output dimensions of convolution. Finally, set up the workspace required and return the function that will run the operation with backward propagation respective to filter.</para><para><simplesect kind="see"><para>See forward for parameter details </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Create convolution input tensor</para><para>Create convolution filter</para><para>Create convolution descriptor</para><para>Calculate convolution output dimensions</para><para>Create output tensor</para><para>Create workspace buffer</para><para>Retun new benchmark</para>        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" line="246" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" bodystart="246" bodyend="334"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_convolution.hpp" line="18" column="1"/>
+  </compounddef>
+</doxygen>

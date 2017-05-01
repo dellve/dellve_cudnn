@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespaceDELLve_1_1Softmax" kind="namespace">
+    <compoundname>DELLve::Softmax</compoundname>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDELLve_1_1Softmax_1ae3c414f0b25c8c67810f0ecefe134249" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>CuDNN::SoftmaxAlgorithm</type>
+        <definition>CuDNN::SoftmaxAlgorithm DELLve::Softmax::convAlgorithm</definition>
+        <argsstring>(std::string alg)</argsstring>
+        <name>convAlgorithm</name>
+        <param>
+          <type>std::string</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" line="21" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" bodystart="21" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDELLve_1_1Softmax_1a1c7774789a671fc20dfedb538d76fa8d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>DELLve::Benchmark</type>
+        <definition>DELLve::Benchmark DELLve::Softmax::forward</definition>
+        <argsstring>(int w, int h, int c, int n, std::string alg)</argsstring>
+        <name>forward</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CuDNN Softmax Forward</para><para>Build 4D tensors using NCHW provided. Fill the input with random data using the cuRAND library. Then, set up the function that will run the operation with forward propagation with algorithm specified.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>w</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Width of each feature map </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>h</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Height of each feature map </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>c</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of feature maps per image </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>n</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of feature maps </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alg</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Algorithm to run. Can be fast, accurate, or log </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" line="52" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" bodystart="52" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDELLve_1_1Softmax_1a842aaf37904b18835f19cbc9073baafa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+        </templateparamlist>
+        <type>DELLve::Benchmark</type>
+        <definition>DELLve::Benchmark DELLve::Softmax::backward</definition>
+        <argsstring>(int w, int h, int c, int n, std::string alg)</argsstring>
+        <name>backward</name>
+        <param>
+          <type>int</type>
+          <declname>w</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>alg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>CuDNN Softmax Backward</para><para>Build 4D tensors using NCHW provided. Fill the input with random data using the cuRAND library. Then, set up the function that will run the operation with backward propagation with algorithm specified.</para><para><simplesect kind="see"><para>See forward for parameter details </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" line="83" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" bodystart="83" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_softmax.hpp" line="20" column="1"/>
+  </compounddef>
+</doxygen>

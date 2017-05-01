@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="structDELLve_1_1Functional_1_1seq" kind="struct" prot="public">
+    <compoundname>DELLve::Functional::seq</compoundname>
+    <templateparamlist>
+      <param>
+        <type>int...</type>
+      </param>
+    </templateparamlist>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="23" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="23" bodyend="23"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

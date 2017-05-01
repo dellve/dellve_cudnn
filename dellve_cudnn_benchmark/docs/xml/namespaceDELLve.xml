@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="namespaceDELLve" kind="namespace">
+    <compoundname>DELLve</compoundname>
+    <innerclass refid="classDELLve_1_1BenchmarkController" prot="public">DELLve::BenchmarkController</innerclass>
+    <innerclass refid="classDELLve_1_1BenchmarkDriver" prot="public">DELLve::BenchmarkDriver</innerclass>
+    <innerclass refid="classDELLve_1_1CurandTensor" prot="public">DELLve::CurandTensor</innerclass>
+    <innernamespace refid="namespaceDELLve_1_1Activation">DELLve::Activation</innernamespace>
+    <innernamespace refid="namespaceDELLve_1_1Convolution">DELLve::Convolution</innernamespace>
+    <innernamespace refid="namespaceDELLve_1_1Functional">DELLve::Functional</innernamespace>
+    <innernamespace refid="namespaceDELLve_1_1Pooling">DELLve::Pooling</innernamespace>
+    <innernamespace refid="namespaceDELLve_1_1Softmax">DELLve::Softmax</innernamespace>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="namespaceDELLve_1adaf1dbdd8f6b300d07dc6a9c4a900588" prot="public" static="no">
+        <type>std::function&lt; CuDNN::Status(void)&gt;</type>
+        <definition>typedef std::function&lt;CuDNN::Status(void)&gt; DELLve::Benchmark</definition>
+        <argsstring></argsstring>
+        <name>Benchmark</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="47" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDELLve_1a8411b986fb25d605b54e037fcfe327db" prot="public" static="no">
+        <type>std::chrono::duration&lt; long int, std::micro &gt;</type>
+        <definition>typedef std::chrono::duration&lt;long int, std::micro&gt; DELLve::usec</definition>
+        <argsstring></argsstring>
+        <name>usec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="48" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDELLve_1a421c3efb6dd4926a89575dd6a238d668" prot="public" static="no">
+        <type>std::chrono::seconds</type>
+        <definition>typedef std::chrono::seconds DELLve::sec</definition>
+        <argsstring></argsstring>
+        <name>sec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="49" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="namespaceDELLve_1ad8d15809118a4b0a70d4d60b2d8ade9a" prot="public" static="no">
+        <type>std::chrono::high_resolution_clock</type>
+        <definition>typedef std::chrono::high_resolution_clock DELLve::clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="50" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="namespaceDELLve_1a97bf8f55fb7257a720195269f1bff9f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <templateparamlist>
+          <param>
+            <type>typename T</type>
+          </param>
+          <param>
+            <type>typename...</type>
+            <declname>A</declname>
+            <defname>A</defname>
+          </param>
+        </templateparamlist>
+        <type>void</type>
+        <definition>void DELLve::registerBenchmark</definition>
+        <argsstring>(T module, const char *benchmarkName, Benchmark(*factory)(A...))</argsstring>
+        <name>registerBenchmark</name>
+        <param>
+          <type>T</type>
+          <declname>module</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>benchmarkName</declname>
+        </param>
+        <param>
+          <type>Benchmark(*)(A...)</type>
+          <declname>factory</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="201" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="201" bodyend="206"/>
+      </memberdef>
+      <memberdef kind="function" id="namespaceDELLve_1a607cdce441a444d9f3d1791cb42a32b7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool DELLve::isValidGpu</definition>
+        <argsstring>(int deviceId)</argsstring>
+        <name>isValidGpu</name>
+        <param>
+          <type>int</type>
+          <declname>deviceId</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_helper.hpp" line="11" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_helper.hpp" bodystart="11" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_activation.hpp" line="19" column="1"/>
+  </compounddef>
+</doxygen>

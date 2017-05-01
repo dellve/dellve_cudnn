@@ -17,9 +17,30 @@
 namespace DELLve {
     namespace Convolution {
 		
+        /**
+         * CuDNN Convolution Forward
+         *
+         * Build 4D tensors using NCHW and KCRS provided for input and filter
+         * respectively. Then, create the output tensor by calculating 
+         * the forward output dimensions of convolution. Finally, set up the
+         * workspace required and return the function that will run the
+         * operation with forward propagation.
+         *
+         * @param w - Width of input image
+         * @param h - Height of input image
+         * @param c - Number of channels per input image
+         * @param n - Number of input images
+         * @param k - Number of filters
+         * @param r - Height of filter
+         * @param s - Width of filter
+         * @param padW - Width of zero padding
+         * @param padH - Height of zero padding
+         * @param strideV -  Filter vertical stride
+         * @param strideH - Filter horizontal stride
+         */
 		template <typename T>
 		DELLve::Benchmark forward ( int w, int h, int c, int n, int k, int r, int s, 
-			int padW, int padH, int strideW, int strideH ) 
+			int padW, int padH, int strideV, int strideH ) 
 		{
 			CuDNN::Handle handle;
 
@@ -108,6 +129,17 @@ namespace DELLve {
 			};
 		}
 
+        /**
+         * CuDNN Convolution Backward Data
+         *
+         * Build 4D tensors using NCHW and KCRS provided for input and filter
+         * respectively. Then, create the output tensor by calculating 
+         * the forward output dimensions of convolution. Finally, set up the
+         * workspace required and return the function that will run the
+         * operation with backward propagation respective to data.
+         * 
+         * @see See forward for parameter details
+         */
 		template <typename T>
 		DELLve::Benchmark backwardData ( int w, int h, int c, int n, int k, int r, int s, 
 			int padW, int padH, int strideW, int strideH ) 
@@ -199,6 +231,17 @@ namespace DELLve {
 			};
 		}
 
+        /**
+         * CuDNN Convolution Backward Filter
+         *
+         * Build 4D tensors using NCHW and KCRS provided for input and filter
+         * respectively. Then, create the output tensor by calculating 
+         * the forward output dimensions of convolution. Finally, set up the
+         * workspace required and return the function that will run the
+         * operation with backward propagation respective to filter.
+         * 
+         * @see See forward for parameter details
+         */
 		template <typename T>
 		DELLve::Benchmark backwardFilter ( int w, int h, int c, int n, int k, int r, int s, 
 			int padW, int padH, int strideW, int strideH ) 

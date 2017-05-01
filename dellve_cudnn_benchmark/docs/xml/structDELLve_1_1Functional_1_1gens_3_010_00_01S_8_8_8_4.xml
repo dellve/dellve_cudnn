@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="structDELLve_1_1Functional_1_1gens_3_010_00_01S_8_8_8_4" kind="struct" prot="public">
+    <compoundname>DELLve::Functional::gens&lt; 0, S...&gt;</compoundname>
+    <templateparamlist>
+      <param>
+        <type>int...</type>
+        <declname>S</declname>
+        <defname>S</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="structDELLve_1_1Functional_1_1gens_3_010_00_01S_8_8_8_4_1a24376208e10bc0dab805b109496f4e31" prot="public" static="no">
+        <type><ref refid="structDELLve_1_1Functional_1_1seq" kindref="compound">seq</ref>&lt; S...&gt;</type>
+        <definition>typedef seq&lt;S...&gt; DELLve::Functional::gens&lt; 0, S...&gt;::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="27" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="27" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="27" bodyend="27"/>
+    <listofallmembers>
+      <member refid="structDELLve_1_1Functional_1_1gens_3_010_00_01S_8_8_8_4_1a24376208e10bc0dab805b109496f4e31" prot="public" virt="non-virtual"><scope>DELLve::Functional::gens&lt; 0, S...&gt;</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.5">
+  <compound refid="classDELLve_1_1BenchmarkController" kind="class"><name>DELLve::BenchmarkController</name>
+    <member refid="classDELLve_1_1BenchmarkController_1a58925ea9f8f3179023105a03ad0301ad" kind="variable"><name>progress_</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1ae214b1becd3025b144ccc0d9769bd458" kind="variable"><name>currRun_</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1a2def5479567af24b6d465ece5a0d6c28" kind="variable"><name>totalTimeMicro_</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1a900de88b5bd9746d76848dee9ebd112e" kind="function"><name>startBenchmark</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1a6dc6485552a0d28d642277b234aebb26" kind="function"><name>startStressTool</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1a7f109f719793663481591ff945fbfa94" kind="function"><name>getProgress</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1a326da27bcc6e9100eada0dfe6fb605f1" kind="function"><name>getAvgTimeMicro</name></member>
+    <member refid="classDELLve_1_1BenchmarkController_1a9b1d8999435504501fc1922069a6093e" kind="function"><name>getBenchmark</name></member>
+  </compound>
+  <compound refid="classDELLve_1_1BenchmarkDriver" kind="class"><name>DELLve::BenchmarkDriver</name>
+    <member refid="classDELLve_1_1BenchmarkDriver_1a1704c7b0bd4ef3640194ee081a3494ab" kind="variable"><name>args_</name></member>
+    <member refid="classDELLve_1_1BenchmarkDriver_1acde10fec6f989a9ab3d563cf533bfaa6" kind="variable"><name>func_</name></member>
+    <member refid="classDELLve_1_1BenchmarkDriver_1acace76355b093373676453d5302154cb" kind="function"><name>BenchmarkDriver</name></member>
+    <member refid="classDELLve_1_1BenchmarkDriver_1a192dbd22be07cb4a0ab3c0ebd1261d7a" kind="function"><name>getBenchmark</name></member>
+  </compound>
+  <compound refid="classDELLve_1_1CurandTensor" kind="class"><name>DELLve::CurandTensor</name>
+    <member refid="classDELLve_1_1CurandTensor_1a5101fabe371984731242a6193c33904b" kind="variable"><name>mGen</name></member>
+    <member refid="classDELLve_1_1CurandTensor_1a50d233442f68b50dc09c67d826f5f251" kind="function"><name>CurandTensor</name></member>
+    <member refid="classDELLve_1_1CurandTensor_1a6943fc0019f3aa1593325a0ca645268b" kind="function"><name>fillTensorRand</name></member>
+    <member refid="classDELLve_1_1CurandTensor_1ab3c15fc105a62e0c942a4e82625fe60e" kind="function"><name>fillFilterRand</name></member>
+    <member refid="classDELLve_1_1CurandTensor_1a110cfc63119f4a1aadebec6a68162ca2" kind="function"><name>fillTensorsRand</name></member>
+    <member refid="classDELLve_1_1CurandTensor_1aca125bd656690f5f5556d47fd8e3661e" kind="function"><name>fillTensorsRand</name></member>
+  </compound>
+  <compound refid="classDELLve_1_1Functional_1_1delayed" kind="class"><name>DELLve::Functional::delayed</name>
+    <member refid="classDELLve_1_1Functional_1_1delayed_1a34386ee603abcfbd2075e10ff62b8361" kind="variable"><name>args_</name></member>
+    <member refid="classDELLve_1_1Functional_1_1delayed_1add1c328c70c7d3817f25c63e14decee4" kind="variable"><name>func_</name></member>
+    <member refid="classDELLve_1_1Functional_1_1delayed_1a0c618a5905c9030ed65b0a8611ab4d2d" kind="function"><name>delayed</name></member>
+    <member refid="classDELLve_1_1Functional_1_1delayed_1afbe30529563b7f27f29ac99cd990d6be" kind="function"><name>call</name></member>
+    <member refid="classDELLve_1_1Functional_1_1delayed_1a72b1d246189e1f219306613e46b266a4" kind="function"><name>callWithArgs</name></member>
+  </compound>
+  <compound refid="structDELLve_1_1Functional_1_1gens" kind="struct"><name>DELLve::Functional::gens</name>
+  </compound>
+  <compound refid="structDELLve_1_1Functional_1_1gens_3_010_00_01S_8_8_8_4" kind="struct"><name>DELLve::Functional::gens&lt; 0, S...&gt;</name>
+    <member refid="structDELLve_1_1Functional_1_1gens_3_010_00_01S_8_8_8_4_1a24376208e10bc0dab805b109496f4e31" kind="typedef"><name>type</name></member>
+  </compound>
+  <compound refid="structDELLve_1_1Functional_1_1seq" kind="struct"><name>DELLve::Functional::seq</name>
+  </compound>
+  <compound refid="namespaceCuDNN" kind="namespace"><name>CuDNN</name>
+  </compound>
+  <compound refid="namespaceCuDNN_1_1Constants" kind="namespace"><name>CuDNN::Constants</name>
+    <member refid="namespaceCuDNN_1_1Constants_1ad236ed62a587c27c28d4031633c73313" kind="variable"><name>alpha</name></member>
+    <member refid="namespaceCuDNN_1_1Constants_1a443d028e487d1b1726b556dc5cb093f6" kind="variable"><name>beta</name></member>
+  </compound>
+  <compound refid="namespaceDELLve" kind="namespace"><name>DELLve</name>
+    <member refid="namespaceDELLve_1adaf1dbdd8f6b300d07dc6a9c4a900588" kind="typedef"><name>Benchmark</name></member>
+    <member refid="namespaceDELLve_1a8411b986fb25d605b54e037fcfe327db" kind="typedef"><name>usec</name></member>
+    <member refid="namespaceDELLve_1a421c3efb6dd4926a89575dd6a238d668" kind="typedef"><name>sec</name></member>
+    <member refid="namespaceDELLve_1ad8d15809118a4b0a70d4d60b2d8ade9a" kind="typedef"><name>clock</name></member>
+    <member refid="namespaceDELLve_1a97bf8f55fb7257a720195269f1bff9f6" kind="function"><name>registerBenchmark</name></member>
+    <member refid="namespaceDELLve_1a607cdce441a444d9f3d1791cb42a32b7" kind="function"><name>isValidGpu</name></member>
+  </compound>
+  <compound refid="namespaceDELLve_1_1Activation" kind="namespace"><name>DELLve::Activation</name>
+    <member refid="namespaceDELLve_1_1Activation_1a9783925e9251c36ca3ba2b12fdf182a2" kind="function"><name>createDescriptor</name></member>
+    <member refid="namespaceDELLve_1_1Activation_1a66c55d314ddfa2330de2dc913d3acf3b" kind="function"><name>forward</name></member>
+    <member refid="namespaceDELLve_1_1Activation_1aa8dfa1a1e673b7c838721dcad33f4d74" kind="function"><name>backward</name></member>
+  </compound>
+  <compound refid="namespaceDELLve_1_1Convolution" kind="namespace"><name>DELLve::Convolution</name>
+    <member refid="namespaceDELLve_1_1Convolution_1a85609fee41b162273cbe85e79cca9e4b" kind="function"><name>forward</name></member>
+    <member refid="namespaceDELLve_1_1Convolution_1a13056898df8299d4cb17203a01ccd3c7" kind="function"><name>backwardData</name></member>
+    <member refid="namespaceDELLve_1_1Convolution_1af6f065ad6020684cbb1b41440c5b7b21" kind="function"><name>backwardFilter</name></member>
+  </compound>
+  <compound refid="namespaceDELLve_1_1Functional" kind="namespace"><name>DELLve::Functional</name>
+  </compound>
+  <compound refid="namespaceDELLve_1_1Pooling" kind="namespace"><name>DELLve::Pooling</name>
+    <member refid="namespaceDELLve_1_1Pooling_1a63b7ace181c50465fc713a63858db5b8" kind="function"><name>convertMode</name></member>
+    <member refid="namespaceDELLve_1_1Pooling_1a3ecccf85377e3ca6502a1fff21ac126d" kind="function"><name>forward</name></member>
+    <member refid="namespaceDELLve_1_1Pooling_1a484a1cd353433549fb20a9035b0f14bd" kind="function"><name>backward</name></member>
+  </compound>
+  <compound refid="namespaceDELLve_1_1Softmax" kind="namespace"><name>DELLve::Softmax</name>
+    <member refid="namespaceDELLve_1_1Softmax_1ae3c414f0b25c8c67810f0ecefe134249" kind="function"><name>convAlgorithm</name></member>
+    <member refid="namespaceDELLve_1_1Softmax_1a1c7774789a671fc20dfedb538d76fa8d" kind="function"><name>forward</name></member>
+    <member refid="namespaceDELLve_1_1Softmax_1a842aaf37904b18835f19cbc9073baafa" kind="function"><name>backward</name></member>
+  </compound>
+  <compound refid="dellve__constants_8hpp" kind="file"><name>dellve_constants.hpp</name>
+  </compound>
+  <compound refid="dellve__cudnn__activation_8hpp" kind="file"><name>dellve_cudnn_activation.hpp</name>
+  </compound>
+  <compound refid="dellve__cudnn__benchmark_8hpp" kind="file"><name>dellve_cudnn_benchmark.hpp</name>
+  </compound>
+  <compound refid="dellve__cudnn__convolution_8hpp" kind="file"><name>dellve_cudnn_convolution.hpp</name>
+  </compound>
+  <compound refid="dellve__cudnn__helper_8hpp" kind="file"><name>dellve_cudnn_helper.hpp</name>
+  </compound>
+  <compound refid="dellve__cudnn__pooling_8hpp" kind="file"><name>dellve_cudnn_pooling.hpp</name>
+  </compound>
+  <compound refid="dellve__cudnn__softmax_8hpp" kind="file"><name>dellve_cudnn_softmax.hpp</name>
+  </compound>
+  <compound refid="dellve__tensor__curand__helper_8hpp" kind="file"><name>dellve_tensor_curand_helper.hpp</name>
+  </compound>
+</doxygenindex>

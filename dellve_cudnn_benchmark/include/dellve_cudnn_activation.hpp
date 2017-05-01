@@ -32,6 +32,18 @@ namespace DELLve {
             return descriptor;
         }
 
+        /**
+         * CuDNN Activation Forward
+         *
+         * Build 4D tensors using NCHW provided. Fill the input with random 
+         * data using the cuRAND library. Then, set up the function that 
+         * will run the operation with forward propagation.
+         *
+         * @param w - Width of each feature map
+         * @param h - Height of each feature map 
+         * @param c - Number of feature maps per image
+         * @param n - Number of feature maps
+         */
         template <typename T>
         DELLve::Benchmark forward ( int w, int h, int c, int n ) {
 	        CuDNN::Handle handle;
@@ -55,6 +67,15 @@ namespace DELLve {
 
         }
 
+        /**
+         * CuDNN Activation Backward
+         *
+         * Build 4D tensors using NCHW provided. Fill the input with random 
+         * data using the cuRAND library. Then, set up the function that 
+         * will run the operation with backward propagation.
+         *
+         * @see See forward for parameter details
+         */
         template <typename T>
         DELLve::Benchmark backward ( int w, int h, int c, int n ) {
             CuDNN::Handle handle;

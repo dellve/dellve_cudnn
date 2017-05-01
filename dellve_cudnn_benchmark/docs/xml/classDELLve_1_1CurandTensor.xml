@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classDELLve_1_1CurandTensor" kind="class" prot="public">
+    <compoundname>DELLve::CurandTensor</compoundname>
+    <templateparamlist>
+      <param>
+        <type>typename</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDELLve_1_1CurandTensor_1a5101fabe371984731242a6193c33904b" prot="private" static="no" mutable="no">
+        <type>CuRAND::PseudoGenerator</type>
+        <definition>CuRAND::PseudoGenerator DELLve::CurandTensor&lt; T &gt;::mGen</definition>
+        <argsstring></argsstring>
+        <name>mGen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="12" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDELLve_1_1CurandTensor_1a50d233442f68b50dc09c67d826f5f251" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>DELLve::CurandTensor&lt; T &gt;::CurandTensor</definition>
+        <argsstring>()</argsstring>
+        <name>CurandTensor</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="15" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="15" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1CurandTensor_1a6943fc0019f3aa1593325a0ca645268b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DELLve::CurandTensor&lt; T &gt;::fillTensorRand</definition>
+        <argsstring>(CuDNN::Tensor&lt; T &gt; tensor)</argsstring>
+        <name>fillTensorRand</name>
+        <param>
+          <type>CuDNN::Tensor&lt; T &gt;</type>
+          <declname>tensor</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="18" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1CurandTensor_1ab3c15fc105a62e0c942a4e82625fe60e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DELLve::CurandTensor&lt; T &gt;::fillFilterRand</definition>
+        <argsstring>(CuDNN::Filter&lt; T &gt; filter)</argsstring>
+        <name>fillFilterRand</name>
+        <param>
+          <type>CuDNN::Filter&lt; T &gt;</type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="22" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="22" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classDELLve_1_1CurandTensor_1a110cfc63119f4a1aadebec6a68162ca2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DELLve::CurandTensor&lt; T &gt;::fillTensorsRand</definition>
+        <argsstring>(std::initializer_list&lt; CuDNN::Tensor&lt; T &gt;&gt; tensorList)</argsstring>
+        <name>fillTensorsRand</name>
+        <param>
+          <type>std::initializer_list&lt; CuDNN::Tensor&lt; T &gt;&gt;</type>
+          <declname>tensorList</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="26" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="26" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1CurandTensor_1aca125bd656690f5f5556d47fd8e3661e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void DELLve::CurandTensor&lt; T &gt;::fillTensorsRand</definition>
+        <argsstring>(CuDNN::Tensor&lt; T &gt; tensor, CuDNN::Filter&lt; T &gt; filter)</argsstring>
+        <name>fillTensorsRand</name>
+        <param>
+          <type>CuDNN::Tensor&lt; T &gt;</type>
+          <declname>tensor</declname>
+        </param>
+        <param>
+          <type>CuDNN::Filter&lt; T &gt;</type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="34" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="34" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" line="11" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_tensor_curand_helper.hpp" bodystart="11" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classDELLve_1_1CurandTensor_1a50d233442f68b50dc09c67d826f5f251" prot="public" virt="non-virtual"><scope>DELLve::CurandTensor</scope><name>CurandTensor</name></member>
+      <member refid="classDELLve_1_1CurandTensor_1ab3c15fc105a62e0c942a4e82625fe60e" prot="public" virt="non-virtual"><scope>DELLve::CurandTensor</scope><name>fillFilterRand</name></member>
+      <member refid="classDELLve_1_1CurandTensor_1a6943fc0019f3aa1593325a0ca645268b" prot="public" virt="non-virtual"><scope>DELLve::CurandTensor</scope><name>fillTensorRand</name></member>
+      <member refid="classDELLve_1_1CurandTensor_1a110cfc63119f4a1aadebec6a68162ca2" prot="public" virt="non-virtual"><scope>DELLve::CurandTensor</scope><name>fillTensorsRand</name></member>
+      <member refid="classDELLve_1_1CurandTensor_1aca125bd656690f5f5556d47fd8e3661e" prot="public" virt="non-virtual"><scope>DELLve::CurandTensor</scope><name>fillTensorsRand</name></member>
+      <member refid="classDELLve_1_1CurandTensor_1a5101fabe371984731242a6193c33904b" prot="private" virt="non-virtual"><scope>DELLve::CurandTensor</scope><name>mGen</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

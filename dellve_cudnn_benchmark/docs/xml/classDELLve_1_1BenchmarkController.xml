@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.5">
+  <compounddef id="classDELLve_1_1BenchmarkController" kind="class" prot="public" abstract="yes">
+    <compoundname>DELLve::BenchmarkController</compoundname>
+    <derivedcompoundref refid="classDELLve_1_1BenchmarkDriver" prot="public" virt="non-virtual">DELLve::BenchmarkDriver&lt; A &gt;</derivedcompoundref>
+    <includes refid="dellve__cudnn__benchmark_8hpp" local="no">dellve_cudnn_benchmark.hpp</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classDELLve_1_1BenchmarkController_1a58925ea9f8f3179023105a03ad0301ad" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>volatile float DELLve::BenchmarkController::progress_</definition>
+        <argsstring></argsstring>
+        <name>progress_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="61" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDELLve_1_1BenchmarkController_1ae214b1becd3025b144ccc0d9769bd458" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int DELLve::BenchmarkController::currRun_</definition>
+        <argsstring></argsstring>
+        <name>currRun_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="63" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classDELLve_1_1BenchmarkController_1a2def5479567af24b6d465ece5a0d6c28" prot="private" static="no" mutable="no">
+        <type>usec</type>
+        <definition>usec DELLve::BenchmarkController::totalTimeMicro_</definition>
+        <argsstring></argsstring>
+        <name>totalTimeMicro_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="64" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classDELLve_1_1BenchmarkController_1a900de88b5bd9746d76848dee9ebd112e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DELLve::BenchmarkController::startBenchmark</definition>
+        <argsstring>(int deviceId, int numRuns)</argsstring>
+        <name>startBenchmark</name>
+        <param>
+          <type>int</type>
+          <declname>deviceId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>numRuns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a benchmark tool.</para><para>Sets device to desired GPU. Warms up the test by running a singular operation and synchronizing. Then, runs the operation the specified number of times. Through each run, calculates time it took to run the current method and sets the progress of the current run by the number of loops ran.</para><para>This is done in a different thread so that external calls can be made to this class to profile the current status.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deviceId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Device ID to run test on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>numRuns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of repeats </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="82" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="82" bodyend="106"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1BenchmarkController_1a6dc6485552a0d28d642277b234aebb26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void DELLve::BenchmarkController::startStressTool</definition>
+        <argsstring>(int deviceId, int seconds)</argsstring>
+        <name>startStressTool</name>
+        <param>
+          <type>int</type>
+          <declname>deviceId</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>seconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Starts a stress test tool.</para><para>Sets device to desired GPU. Starts the clock and runs the benchmark until desired elapsed time has been reached. Through each run, sets the progress of the test by the number of seconds elapsed.</para><para>This is also done in a separate thread so that external calls can be made to this class to profile the current status.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>deviceId</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Device ID to run test on </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>seconds</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>- Number of seconds to run the test </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="122" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="122" bodyend="150"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1BenchmarkController_1a7f109f719793663481591ff945fbfa94" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>float</type>
+        <definition>float DELLve::BenchmarkController::getProgress</definition>
+        <argsstring>() const </argsstring>
+        <name>getProgress</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the progress set by the tests.</para><para><simplesect kind="return"><para>float - Progress of the current tool. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="157" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="157" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classDELLve_1_1BenchmarkController_1a326da27bcc6e9100eada0dfe6fb605f1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int DELLve::BenchmarkController::getAvgTimeMicro</definition>
+        <argsstring>() const </argsstring>
+        <name>getAvgTimeMicro</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the average time taken to run the current problem set in the benchmarks.</para><para>Should not be called by Stress Tools.</para><para><simplesect kind="return"><para>int - Average time in microsends taken for each benchmark. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="169" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="169" bodyend="172"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classDELLve_1_1BenchmarkController_1a9b1d8999435504501fc1922069a6093e" prot="private" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>Benchmark</type>
+        <definition>virtual Benchmark DELLve::BenchmarkController::getBenchmark</definition>
+        <argsstring>()=0</argsstring>
+        <name>getBenchmark</name>
+        <reimplementedby refid="classDELLve_1_1BenchmarkDriver_1a192dbd22be07cb4a0ab3c0ebd1261d7a">getBenchmark</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="176" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Controller class that speficies the actual runtime execution of each tool in Dellve CuDNN. Provides functions that allows profiling of current status of the exeuction.</para><para>Assumes that <ref refid="classDELLve_1_1BenchmarkDriver" kindref="compound">BenchmarkDriver</ref> has been ran with the function of current operation as desired. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="1">
+        <label>DELLve::BenchmarkDriver&lt; A &gt;</label>
+        <link refid="classDELLve_1_1BenchmarkDriver"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>DELLve::BenchmarkController</label>
+        <link refid="classDELLve_1_1BenchmarkController"/>
+      </node>
+    </inheritancegraph>
+    <location file="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" line="60" column="1" bodyfile="/home/dellvedeep/dellve/dellve_cudnn/dellve_cudnn_benchmark/include/dellve_cudnn_benchmark.hpp" bodystart="60" bodyend="178"/>
+    <listofallmembers>
+      <member refid="classDELLve_1_1BenchmarkController_1ae214b1becd3025b144ccc0d9769bd458" prot="private" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>currRun_</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a326da27bcc6e9100eada0dfe6fb605f1" prot="public" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>getAvgTimeMicro</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a9b1d8999435504501fc1922069a6093e" prot="private" virt="pure-virtual"><scope>DELLve::BenchmarkController</scope><name>getBenchmark</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a7f109f719793663481591ff945fbfa94" prot="public" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>getProgress</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a58925ea9f8f3179023105a03ad0301ad" prot="private" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>progress_</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a900de88b5bd9746d76848dee9ebd112e" prot="public" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>startBenchmark</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a6dc6485552a0d28d642277b234aebb26" prot="public" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>startStressTool</name></member>
+      <member refid="classDELLve_1_1BenchmarkController_1a2def5479567af24b6d465ece5a0d6c28" prot="private" virt="non-virtual"><scope>DELLve::BenchmarkController</scope><name>totalTimeMicro_</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
