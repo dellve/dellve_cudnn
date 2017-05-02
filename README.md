@@ -41,3 +41,10 @@ Once pip install is successful, you can build the api docs located in the docs/ 
 ```
 
 This will create a sphinx document in docs/build/html/index.html
+
+Documentation
+-------------
+
+http://dellve-cudnn.readthedocs.io
+
+(Missing API References due to install requirements. Full docs => Create API Docs)
