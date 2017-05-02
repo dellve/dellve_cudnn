@@ -21,7 +21,9 @@ Install Requirements
 Dellve CuDNN requires CUDA and CuDNN before setup. 
 
 >These environment variables must be set before installation:
+>
 >CUDA\_PATH: Path to CUDA library
+>
 >CUDNN\_PATH: Path to CUDNN library
 
 [CUDA Setup](http://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/#installing-cuda-development-tools)
